@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project blogui -->
-<!-- Saved: 2019-05-07, 17:11:42 -->
+<!-- Saved: 2019-05-08, 14:03:15 -->
 <!-- Copyright (C) 2019 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -17,11 +17,16 @@
     <Source>uifile/__init__.py</Source>
   </Sources>
   <Forms>
+    <Form>BoottomCopyrightWidget.ui</Form>
+    <Form>BottomOtherWidget.ui</Form>
     <Form>HeaderImgWidget.ui</Form>
     <Form>HeaderMenuWidget.ui</Form>
     <Form>HeaderTextWidget.ui</Form>
     <Form>Index.ui</Form>
+    <Form>LeftPostWidget.ui</Form>
     <Form>MainLayout.ui</Form>
+    <Form>RightLoginWidget.ui</Form>
+    <Form>RightSearchWidget.ui</Form>
   </Forms>
   <Vcs>
     <VcsType>None</VcsType>
