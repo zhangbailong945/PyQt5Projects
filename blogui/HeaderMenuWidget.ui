@@ -33,7 +33,7 @@
     <number>0</number>
    </property>
    <item>
-    <spacer name="HS_HeaderMenuLeft">
+    <spacer name="hs_HeaderMenuLeft">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -46,7 +46,7 @@
     </spacer>
    </item>
    <item>
-    <widget class="QPushButton" name="PB_Index">
+    <widget class="QPushButton" name="pb_Index">
      <property name="minimumSize">
       <size>
        <width>50</width>
@@ -59,7 +59,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="PB_Category">
+    <widget class="QPushButton" name="pb_Category">
      <property name="minimumSize">
       <size>
        <width>50</width>
@@ -72,7 +72,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="PB_DateTime">
+    <widget class="QPushButton" name="pb_DateTime">
      <property name="minimumSize">
       <size>
        <width>50</width>
@@ -85,12 +85,15 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="PB_Tags">
+    <widget class="QPushButton" name="pb_Tags">
      <property name="minimumSize">
       <size>
        <width>50</width>
        <height>40</height>
       </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
      </property>
      <property name="text">
       <string>标签云</string>
@@ -98,7 +101,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="PB_About">
+    <widget class="QPushButton" name="pb_About">
      <property name="minimumSize">
       <size>
        <width>50</width>
@@ -114,7 +117,7 @@
     </widget>
    </item>
    <item>
-    <spacer name="HS_HeaderMenuRight">
+    <spacer name="hs_HeaderMenuRight">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>

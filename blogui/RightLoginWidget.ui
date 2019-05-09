@@ -33,21 +33,21 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QLabel" name="label_Login_Title">
+    <widget class="QLabel" name="lb_Login_Title">
      <property name="text">
       <string>TextLabel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_Login_line">
+    <widget class="QLabel" name="lb_Login_line">
      <property name="text">
       <string>TextLabel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QCommandLinkButton" name="commandLinkButton_Login">
+    <widget class="QCommandLinkButton" name="clb_Login">
      <property name="text">
       <string>CommandLinkButton</string>
      </property>

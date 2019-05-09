@@ -33,17 +33,17 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QTextBrowser" name="textBrowser_Post"/>
+    <widget class="QTextBrowser" name="tb_Post"/>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_Previous">
+    <widget class="QPushButton" name="pb_Previous">
      <property name="text">
       <string>上一页</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_Next">
+    <widget class="QPushButton" name="pb_Next">
      <property name="text">
       <string>下一页</string>
      </property>

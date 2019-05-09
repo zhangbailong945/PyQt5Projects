@@ -33,7 +33,7 @@
     <number>0</number>
    </property>
    <item>
-    <spacer name="HS_HeaderTextLeft">
+    <spacer name="hs_HeaderTextLeft">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -46,21 +46,21 @@
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="LB_HeaderText1">
+    <widget class="QLabel" name="lb_HeaderText1">
      <property name="text">
       <string>Loach</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="LB_HeaderText2">
+    <widget class="QLabel" name="lb_HeaderText2">
      <property name="text">
       <string>Blog</string>
      </property>
     </widget>
    </item>
    <item>
-    <spacer name="HS_HeaderTextRight">
+    <spacer name="hs_HeaderTextRight">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>

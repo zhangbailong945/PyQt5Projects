@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>HeaderImgWidget</class>
+ <widget class="QWidget" name="HeaderImgWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(247, 155, 106);</string>
@@ -36,7 +36,7 @@
     <number>0</number>
    </property>
    <item>
-    <spacer name="HS_HeaderImgLeft">
+    <spacer name="hs_HeaderImgLeft">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -49,7 +49,7 @@
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="LB_HeaderImg">
+    <widget class="QLabel" name="lb_HeaderImg">
      <property name="text">
       <string/>
      </property>
@@ -59,7 +59,7 @@
     </widget>
    </item>
    <item>
-    <spacer name="HS_HeaderImgRight">
+    <spacer name="hs_HeaderImgRight">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>

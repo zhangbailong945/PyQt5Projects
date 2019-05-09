@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>309</width>
-    <height>130</height>
+    <height>49</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,21 +33,21 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QLabel" name="label_Search_Text">
+    <widget class="QLabel" name="lb_Search_Text">
      <property name="text">
       <string>搜索</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_Search_Line">
+    <widget class="QLabel" name="lb_Search_Line">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QWidget" name="widgetSearchWidget" native="true">
      <property name="autoFillBackground">
       <bool>true</bool>
      </property>
@@ -68,10 +68,10 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="lineEdit_Keyword"/>
+       <widget class="QLineEdit" name="le_Keyword"/>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_Keyword">
+       <widget class="QPushButton" name="pb_Keyword">
         <property name="text">
          <string>PushButton</string>
         </property>
