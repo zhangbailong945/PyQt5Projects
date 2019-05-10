@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>bottomCopyrightWidget</class>
- <widget class="QWidget" name="bottomCopyrightWidget">
+ <class>BottomCopyrightWidget</class>
+ <widget class="QWidget" name="BottomCopyrightWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>399</width>
     <height>41</height>
    </rect>
   </property>

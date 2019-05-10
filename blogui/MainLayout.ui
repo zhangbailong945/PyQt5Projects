@@ -16,7 +16,7 @@
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="vl_Main">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -34,7 +34,7 @@
    </property>
    <item>
     <widget class="QWidget" name="topWidget" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="vl_Top">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -55,7 +55,7 @@
    </item>
    <item>
     <widget class="QWidget" name="centerWidget" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="vl_Center">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -73,7 +73,7 @@
       </property>
       <item>
        <widget class="QWidget" name="leftWidget" native="true">
-        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <layout class="QVBoxLayout" name="vl_CenterLeft">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -94,7 +94,7 @@
       </item>
       <item>
        <widget class="QWidget" name="rightWidget" native="true">
-        <layout class="QVBoxLayout" name="verticalLayout_5">
+        <layout class="QVBoxLayout" name="vl_CenterRight">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -118,7 +118,7 @@
    </item>
    <item>
     <widget class="QWidget" name="bottomWidget" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="vl_Bottom">
       <property name="spacing">
        <number>0</number>
       </property>
