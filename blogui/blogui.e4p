@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project blogui -->
-<!-- Saved: 2019-05-10, 16:10:20 -->
+<!-- Saved: 2019-05-21, 17:23:37 -->
 <!-- Copyright (C) 2019 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -19,6 +19,7 @@
     <Source>Ui_HeaderMenuWidget.py</Source>
     <Source>Ui_HeaderTextWidget.py</Source>
     <Source>Ui_HeaderTitlebarWidget.py</Source>
+    <Source>Ui_Index.py</Source>
     <Source>Ui_LeftPostWidget.py</Source>
     <Source>Ui_MainLayout.py</Source>
     <Source>Ui_RightLoginWidget.py</Source>

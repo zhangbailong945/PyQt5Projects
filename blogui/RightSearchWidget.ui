@@ -6,15 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>309</width>
-    <height>49</height>
+    <width>313</width>
+    <height>75</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -34,6 +37,11 @@
    </property>
    <item>
     <widget class="QLabel" name="lb_Search_Text">
+     <property name="styleSheet">
+      <string notr="true">margin-top:10px;
+margin-left:10px;
+</string>
+     </property>
      <property name="text">
       <string>搜索</string>
      </property>
@@ -41,6 +49,28 @@
    </item>
    <item>
     <widget class="QLabel" name="lb_Search_Line">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>3</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>9</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:2px solid rgb(247, 155, 106);
+border-left:none;
+border-right:none;
+border-bottom:none;
+margin-top:5px;
+margin-left:10px;
+margin-right:10px;
+</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -49,11 +79,11 @@
    <item>
     <widget class="QWidget" name="widgetSearchWidget" native="true">
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -68,12 +98,45 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="le_Keyword"/>
+       <widget class="QLineEdit" name="le_Keyword">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:1px solid rgb(238,238,238);
+margin-left:10px;
+</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pb_Keyword">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;
+background-color: rgb(247, 155, 106);
+border-radius:3px;
+margin-right:10px;
+color: rgb(255, 255, 255);
+
+</string>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>搜索</string>
         </property>
        </widget>
       </item>

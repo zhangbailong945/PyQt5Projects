@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>372</width>
-    <height>311</height>
+    <width>313</width>
+    <height>208</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,6 +37,23 @@
    </item>
    <item>
     <widget class="QPushButton" name="pb_Previous">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color:white;
+background-color: rgb(247, 155, 106);
+border-radius:8px;
+margin-top:5px;
+</string>
+     </property>
      <property name="text">
       <string>上一页</string>
      </property>
@@ -44,6 +61,23 @@
    </item>
    <item>
     <widget class="QPushButton" name="pb_Next">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color:white;
+background-color: rgb(247, 155, 106);
+border-radius:8px;
+margin-top:5px;
+</string>
+     </property>
      <property name="text">
       <string>下一页</string>
      </property>

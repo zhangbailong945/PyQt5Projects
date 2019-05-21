@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_BottomCopyrightWidget(object):
     def setupUi(self, BottomCopyrightWidget):
         BottomCopyrightWidget.setObjectName("BottomCopyrightWidget")
-        BottomCopyrightWidget.resize(400, 41)
+        BottomCopyrightWidget.resize(399, 41)
         BottomCopyrightWidget.setAutoFillBackground(False)
         BottomCopyrightWidget.setStyleSheet("background-color: rgb(17, 17, 17);\n"
 "color: rgb(85, 85, 85);")

@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_HeaderTextWidget(object):
     def setupUi(self, HeaderTextWidget):
         HeaderTextWidget.setObjectName("HeaderTextWidget")
-        HeaderTextWidget.resize(400, 81)
+        HeaderTextWidget.resize(400, 54)
         HeaderTextWidget.setAutoFillBackground(True)
         self.horizontalLayout = QtWidgets.QHBoxLayout(HeaderTextWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -34,8 +34,8 @@ class Ui_HeaderTextWidget(object):
     def retranslateUi(self, HeaderTextWidget):
         _translate = QtCore.QCoreApplication.translate
         HeaderTextWidget.setWindowTitle(_translate("HeaderTextWidget", "Form"))
-        self.lb_HeaderText1.setText(_translate("HeaderTextWidget", "Loach"))
-        self.lb_HeaderText2.setText(_translate("HeaderTextWidget", "Blog"))
+        self.lb_HeaderText1.setText(_translate("HeaderTextWidget", "LoachBlog"))
+        self.lb_HeaderText2.setText(_translate("HeaderTextWidget", "个人笔记"))
 
 
 if __name__ == "__main__":

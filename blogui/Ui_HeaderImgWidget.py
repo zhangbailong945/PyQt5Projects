@@ -11,22 +11,27 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_HeaderImgWidget(object):
     def setupUi(self, HeaderImgWidget):
         HeaderImgWidget.setObjectName("HeaderImgWidget")
-        HeaderImgWidget.resize(400, 107)
+        HeaderImgWidget.resize(400, 86)
         HeaderImgWidget.setAutoFillBackground(False)
         HeaderImgWidget.setStyleSheet("background-color: rgb(247, 155, 106);")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(HeaderImgWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setSpacing(0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.hl_htw_img = QtWidgets.QHBoxLayout(HeaderImgWidget)
+        self.hl_htw_img.setContentsMargins(0, 0, 0, 0)
+        self.hl_htw_img.setSpacing(0)
+        self.hl_htw_img.setObjectName("hl_htw_img")
         spacerItem = QtWidgets.QSpacerItem(144, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
-        self.lb_HeaderImg = QtWidgets.QLabel(HeaderImgWidget)
-        self.lb_HeaderImg.setText("")
-        self.lb_HeaderImg.setPixmap(QtGui.QPixmap(":/images/C:/Users/Loach/Desktop/logo.png"))
-        self.lb_HeaderImg.setObjectName("lb_HeaderImg")
-        self.horizontalLayout.addWidget(self.lb_HeaderImg)
+        self.hl_htw_img.addItem(spacerItem)
+        self.pb_HeaderImg = RotateButton(HeaderImgWidget)
+        self.pb_HeaderImg.setEnabled(False)
+        self.pb_HeaderImg.setMinimumSize(QtCore.QSize(80, 80))
+        self.pb_HeaderImg.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pb_HeaderImg.setAutoFillBackground(False)
+        self.pb_HeaderImg.setStyleSheet("border:none;")
+        self.pb_HeaderImg.setText("")
+        self.pb_HeaderImg.setAutoRepeat(False)
+        self.pb_HeaderImg.setObjectName("pb_HeaderImg")
+        self.hl_htw_img.addWidget(self.pb_HeaderImg)
         spacerItem1 = QtWidgets.QSpacerItem(143, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
+        self.hl_htw_img.addItem(spacerItem1)
 
         self.retranslateUi(HeaderImgWidget)
         QtCore.QMetaObject.connectSlotsByName(HeaderImgWidget)
@@ -35,6 +40,7 @@ class Ui_HeaderImgWidget(object):
         _translate = QtCore.QCoreApplication.translate
         HeaderImgWidget.setWindowTitle(_translate("HeaderImgWidget", "Form"))
 
+from Widgets.Buttons.RotateButton import RotateButton
 import image_rc
 
 if __name__ == "__main__":

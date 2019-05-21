@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>81</height>
+    <height>54</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,14 +48,14 @@
    <item>
     <widget class="QLabel" name="lb_HeaderText1">
      <property name="text">
-      <string>Loach</string>
+      <string>LoachBlog</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="lb_HeaderText2">
      <property name="text">
-      <string>Blog</string>
+      <string>个人笔记</string>
      </property>
     </widget>
    </item>
