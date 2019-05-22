@@ -56,6 +56,15 @@
      <property name="text">
       <string>首页</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item>
@@ -69,6 +78,12 @@
      <property name="text">
       <string>分类</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item>
@@ -81,6 +96,12 @@
      </property>
      <property name="text">
       <string>时间轴</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -98,6 +119,15 @@
      <property name="text">
       <string>标签云</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item>
@@ -111,8 +141,14 @@
      <property name="text">
       <string>关于</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
      <property name="autoRepeat">
       <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
