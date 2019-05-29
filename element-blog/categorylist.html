@@ -24,39 +24,23 @@
 		<link rel="stylesheet" href="css/amazeui.page.css">
 	</head>
 	<body>
+		<ul class="am-list admin-sidebar-list" id="collapase-nav-1">
+  <li  class="am-panel">
+    <a  href="index.html"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
+  </li>
 		<div data-am-widget="list_news" class="am-list-news am-list-news-default">
 			<!--列表标题-->
 			<div class="am-list-news-hd am-cf">
 				<!--带更多链接-->
 				<a href="###" class="">
-					<h2>最新笔记</h2>
+					<h2 id="cname"></h2>
 				</a>
 			</div>
 
 			<div class="am-list-news-bd">
 				<ul class="am-list" id="plist">
 
-					<!--缩略图在标题左边
-					
-					
-					<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
-						<div class="am-u-sm-4 am-list-thumb">
-							<a href="http://www.douban.com/online/11624755/" class="">
-								<img src="https://04imgmini.eastday.com/mobile/20190527/20190527040404_a8cd9aae23923773cd3635a83e10ac1b_2_mwpm_03201609.jpg"
-								 alt="我最喜欢的一张画" />
-							</a>
-						</div>
 
-						<div class=" am-u-sm-8 am-list-main">
-							<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>
-
-							<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-
-						</div>
-					</li>
-					-->
-					
-					
 				</ul>
 
 				<div id="page">
@@ -89,7 +73,8 @@
 		<script>
 			
 			$(function() {
-				axios.get('http://localhost:8000/api/post/?format=json&pageNumer=1&pageSize=3')
+				var cid = getQueryVariable('id');
+				axios.get('http://localhost:8000/api/post/?format=json&cid='+cid+'&pageNumer=1&pageSize=3')
 					.then(function(data) {
 						if (data.data.previous != null) {
 							$('#pageNum1').html('<a javascript:void(0);  onclick="go(\"' + data.data.previous + '\")">上一页</a>')
@@ -128,6 +113,19 @@
 					.catch(function(error) {
 						console.log(error);
 					});
+			}
+			
+			/*获取URL参数*/
+			function getQueryVariable(variable) {
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+				for (var i = 0; i < vars.length; i++) {
+					var pair = vars[i].split("=");
+					if (pair[0] == variable) {
+						return pair[1];
+					}
+				}
+				return (false);
 			}
 			
 			/*处理Post数据*/
