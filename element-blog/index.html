@@ -133,6 +133,8 @@
 			/*处理Post数据*/
 			function getPostList(data){
 				var htmlStr='';
+				if(data.data.results.length>0)
+				{
 				$.each(data.data.results,function(k,v){
 					htmlStr+=
 					  "<li class='am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left'>"+
@@ -151,6 +153,13 @@
 					 
 				});
 				$('#plist').html(htmlStr);
+				}
+				else
+				{
+					$('#plist').html(
+					"<center><div style='text-aglin:center;'><font color='red'>暂时还没有数据!<font></div></center>"
+					);
+				}
 			}
 		</script>
 	</body>

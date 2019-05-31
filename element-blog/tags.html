@@ -22,13 +22,31 @@
 		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
 		<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
 		<link rel="stylesheet" href="css/amazeui.page.css">
+		<style>
+			.tag-cloud a {
+				border: 1px solid #ebebeb;
+				padding: 2px 7px;
+				line-height: 1.5em;
+				display: inline-block;
+				margin: 0 7px 7px 0;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="am-container" id="category">
+		<div class="am-container">
+			<div id="tags" class="tag-cloud" style="margin:30px;">
 
+			</div>
+		</div>
+		<div id="page">
+			<ul class="am-pagination am-pagination-default am-page-default">
+				<li id="pageNum1">
 
+				</li>
+				<li id="pageNum2">
 
-			
+				</li>
+			</ul>
 		</div>
 		<div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
 			<a href="#top" title="">
@@ -50,8 +68,8 @@
 		<script src="js/amazeui.page.js"></script>
 		<script>
 			$(function() {
-			
-				var url = 'http://localhost:8000/api/category/?format=json&pageNumer=1&pageSize=100';
+
+				var url = 'http://localhost:8000/api/tags/?pageNumer=1&pageSize=50';
 				axios.get(url)
 					.then(function(data) {
 						getPostList(data);
@@ -62,29 +80,51 @@
 
 			});
 
+			/*翻页*/
+			function go(url) {
+				axios.get(url)
+					.then(function(data) {
+						if (data.data.previous != null) {
+							$('#pageNum1').html('<a javascript:void(0);  onclick="go(\'' + data.data.previous + '\')">上一页</a>')
+						} else {
+							$('#pageNum1').html('');
+						}
+						if (data.data.next != null) {
+							$('#pageNum2').html('<a javascript:void(0);  onclick="go(\'' + data.data.next + '\')">下一页</a>')
+						} else {
+							$('#pageNum2').html('');
+						}
+						getPostList(data);
+					})
+					.catch(function(error) {
+						console.log(error);
+					});
+			}
+			/**
+			 * 产生随机因子
+			 */
+			function getRandomInt(max) {
+				return Math.floor(Math.random() * Math.floor(max));
+			}
+
 			/*处理Post数据*/
 			function getPostList(data) {
-				var htmlStr=''
-				if(data.data.results.length>0)
-				{
-				htmlStr+="<ul class='am-list admin-sidebar-list' id='collapase-nav-1'>";
-				htmlStr+=
-				"<li class='am-panel'>"+
-					"<a  href='index.html'><i class='am-icon-home am-margin-left-sm'></i> 首页</a>"+
-				"</li>";
-				$.each(data.data.results,function(k,v){
-					htmlStr+=
-					"<li class='am-panel'>"+
-						"<a href='categorylist.html?id="+v.id+"'><i class='am-icon-list am-margin-left-sm'></i>&nbsp;&nbsp;"+v.name+"</a>"+
-					"</li>";
-				});
-				htmlStr+="</url>";
-				$('#category').html(htmlStr);
-				}
-				else
-				{
-					$('#category').html(
-					"<center><div style='text-aglin:center;'><font color='red'>暂时还没有数据!<font></div></center>"
+				var htmlStr = '';
+				colors = ['am-btn-default', 'am-btn-primary', 'am-btn-secondary', 'am-btn-success', 'am-btn-warning',
+					'am-btn-danger '
+				];
+
+				if (data.data.results.length > 0) {
+					$.each(data.data.results, function(k, v) {
+						color = colors[getRandomInt(5)];
+						htmlStr +=
+							"<a class='am-btn " + color + " am-round' href='taglist.html?tid=" + v.id + "' >" + v.name + "</a>";
+
+					});
+					$('#tags').html(htmlStr);
+				} else {
+					$('#tags').html(
+						"<center><div style='text-aglin:center;'><font color='red'>暂时还没有数据!<font></div></center>"
 					);
 				}
 			}

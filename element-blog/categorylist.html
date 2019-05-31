@@ -74,7 +74,7 @@
 			
 			$(function() {
 				var cid = getQueryVariable('id');
-				axios.get('http://localhost:8000/api/post/?format=json&cid='+cid+'&pageNumer=1&pageSize=3')
+				axios.get('http://localhost:8000/api/post/?format=json&category__id='+cid+'&pageNumer=1&pageSize=3')
 					.then(function(data) {
 						if (data.data.previous != null) {
 							$('#pageNum1').html('<a javascript:void(0);  onclick="go(\"' + data.data.previous + '\")">上一页</a>')
@@ -130,6 +130,8 @@
 			
 			/*处理Post数据*/
 			function getPostList(data){
+				if (data.data.results.length>0){
+					
 				var htmlStr='';
 				$.each(data.data.results,function(k,v){
 					htmlStr+=
@@ -149,6 +151,13 @@
 					 
 				});
 				$('#plist').html(htmlStr);
+				}
+				else
+				{
+					$('#plist').html(
+					"<center><div style='text-aglin:center;'><font color='red'>暂时还没有数据!<font></div></center>"
+					);
+				}
 			}
 		</script>
 	</body>
