@@ -37,24 +37,27 @@
    </property>
    <item>
     <widget class="QWidget" name="widgetBottomLeft" native="true">
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
-       <number>0</number>
+       <number>20</number>
       </property>
       <property name="leftMargin">
-       <number>0</number>
+       <number>50</number>
       </property>
       <property name="topMargin">
-       <number>0</number>
+       <number>50</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>50</number>
       </property>
       <property name="bottomMargin">
-       <number>0</number>
+       <number>50</number>
       </property>
      </layout>
     </widget>
