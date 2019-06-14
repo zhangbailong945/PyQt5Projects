@@ -9,24 +9,36 @@ Created on 2019年1月20日
 @file: Utils.TestColourfulWidget
 @description: 
 """
+from PyQt5.QtCore import Qt
 from CommonUtil import Signals
 from ColourfulWidget import ColourfulWidget
+from PreviewWidget import PreviewWidget
 
 
-__Author__ = "Irony"
-__Copyright__ = "Copyright (c) 2019"
+class ColorWidget(ColourfulWidget):
 
-if __name__ == '__main__':
-    import sys
-    import os
-    os.chdir('../')
-    from PyQt5.QtWidgets import QApplication
-    app = QApplication(sys.argv)
-    app.setStyleSheet(
-        'ColourfulWidget{background:white;}\n#scrollArea,#scrollAreaWidgetContents{background:transparent;}')
-    w = ColourfulWidget()
-    Signals.colourfulItemClicked.connect(
-        lambda name, colors: print(name, colors))
-    w.show()
-    w.init()
-    sys.exit(app.exec_())
+    def __init__(self,*args,**kwargs):
+        super(ColorWidget,self).__init__(self,*args,**kwargs)
+        # 背景透明
+        self.setAttribute(Qt.WA_TranslucentBackground, True)
+        # 无边框
+        self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
+        self.widgetBottom.setVisible(False)
+        # 预览界面
+        self.previewWidget = PreviewWidget(self.widgetSkinBg)
+        self.previewWidget.setVisible(False)
+        # 初始化信号槽
+        self._initSignals()
+    
+    def _initSignals(self):
+        # 点击颜色
+        Signals.colourfulItemClicked.connect(self.onColourfulItemClicked)
+    
+    def onColourfulItemClicked(self, name, color):
+        """
+        :param name:        颜色名字
+        :param color:       颜色
+        """
+        self.previewWidget.setVisible(True)
+        self.previewWidget.setTitle(name)
+        self.previewWidget.setPixmap(PreviewWidget.Color, color)
