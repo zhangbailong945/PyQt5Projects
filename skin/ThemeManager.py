@@ -250,8 +250,7 @@ PictureWidget {{
 
 class ThemeManager:
 
-    ThemeDir = '
-    '
+    ThemeDir = 'Resources/Themes'
     ThemeName = 'Default'
 
     # 鼠标

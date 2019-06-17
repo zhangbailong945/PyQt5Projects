@@ -33,9 +33,11 @@ class MyColorDialog(QWidget):
         :param name:        颜色名字
         :param color:       颜色
         """
+        self.skinDialog.setVisible(False)
         self.previewWidget.setVisible(True)
         self.previewWidget.setTitle(name)
         self.previewWidget.setPixmap(PreviewWidget.Color, color)
+        
 
 
     
@@ -59,7 +61,6 @@ class MyColorDialog(QWidget):
             pos=settings.value("pos",QVariant(QPoint(200,200)))
             size=settings.value("size",QVariant(QSize(400,400)))
             styleTemplate=settings.value('styleTemplate').replace('\n','')
-            print(styleTemplate)
             self.setStyleSheet(styleTemplate)
             self.resize(size)
             self.move(pos)
@@ -68,8 +69,6 @@ class MyColorDialog(QWidget):
     
     def showSkinDialog(self):
         self.skinDialog=ColourfulWidget()
-        Signals.colourfulItemClicked.connect(
-        lambda name, colors: print(name, colors))
         self.skinDialog.show()
         self.skinDialog.init()
 

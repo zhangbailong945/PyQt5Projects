@@ -58,6 +58,7 @@ class PreviewWidget(QWidget, Ui_FormPreviewWidget):
         """
         self._which = which
         self._poc = poc
+        print('poc:%s'% poc)
         if not hasattr(self, '_UiMainWindow'):
             # 创建一个隐藏的主界面
             self._UiMainWindow = QWidget()
@@ -102,10 +103,12 @@ class PreviewWidget(QWidget, Ui_FormPreviewWidget):
             Setting.setValue('picture', None)
             Setting.setValue('colourful', None)
         elif self._which == self.Color:
+            print('poc是什么类型1：%s'% self._poc)
             ThemeManager.loadColourfulTheme(self._poc)
             if isinstance(self._poc, QColor):
                 Setting.setValue('colourful', self._poc)
             else:
                 # 渐变需要转成字典数据
+                print('poc是什么类型2：%s'% self._poc)
                 Setting.setValue('colourful', GradientUtils.toJson(self._poc))
             Setting.setValue('picture', None)
