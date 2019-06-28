@@ -143,7 +143,7 @@ PictureWidget {{
 # 渐变颜色
 StyleGradientTemplate = """
 /*主窗口*/
-#widgetMain {{
+#MyQWidget {{
     background: {3};
 }}
 
@@ -283,6 +283,33 @@ class ThemeManager:
             QApplication.instance().setStyleSheet(
                 open(path, 'rb').read().decode('utf-8', errors='ignore'))
             return 1
+        except Exception as e:
+            print(e)
+    @classmethod
+    def loadPictureTheme(cls, image=None, widget=None, replaces={}):
+        """设置图片背景的主题
+        :param cls:
+        :param image:         背景图片
+        :param widget:        指定控件
+        """
+        # 加载主题取样式
+        path = cls.stylePath('Default')
+        try:
+            styleSheet = open(path, 'rb').read().decode(
+                'utf-8', errors='ignore')
+            # 需要替换部分样式
+            if image and os.path.isfile(image):
+                # 获取图片主色调
+
+                # 替换name
+                templates = StylePictureTemplate
+                for name, value in replaces.items():
+                    templates = templates.replace(name, value)
+
+                styleSheet += templates.format(os.path.abspath(
+                    image).replace('\\', '/')) + StyleColorTemplate.format(*color)
+            widget = widget or QApplication.instance()
+            widget.setStyleSheet(styleSheet)
         except Exception as e:
             print(e)
 

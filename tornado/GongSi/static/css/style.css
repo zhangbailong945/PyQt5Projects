@@ -1,0 +1,299 @@
+﻿/* 模板易源码模版网 做最好的织梦整站模板下载网站 */
+/* 模版源码：Www.CnCnLe.com */
+/* 仿站：Fang.AdminBaby.Com */
+/* 站长：Www.AdminBaby.Com 专业图标阿里开门站 */
+/* QQ：43171398 */
+body {
+	color: #333;
+	font-size: 13px;
+	font-family: "Microsoft Yahei";
+	width: 100%;
+	overflow-x: hidden;
+}
+.inner-banner img {
+	width: 100%;
+}
+@media only screen and (max-width: 768px) {
+.padding-big {
+	padding: 10px;
+}
+.margin-big {
+	margin: 10px;
+}
+.padding {
+	padding: 5px;
+}
+.margin {
+	margin: 5px;
+}
+.padding-big-top {
+	padding-top: 10px;
+}
+.padding-big-bottom {
+	padding-bottom: 10px;
+}
+.padding-big-left {
+	padding-left: 10px;
+}
+.padding-big-right {
+	padding-right: 10px;
+}
+.margin-big-top {
+	margin-top: 10px;
+}
+.margin-big-bottom {
+	margin-bottom: 10px;
+}
+.margin-big-left {
+	margin-left: 10px;
+}
+.margin-big-right {
+	margin-right: 10px;
+}
+}
+a:hover {
+	color: #0ae
+}
+.bg-main {
+	background-color: #0ae
+}
+.bg-nav {
+	background-color: #0ae
+}
+.bg-gray {
+	background-color: #f5f5f5;
+}
+.bg-black2 {
+	background-color: #09c;
+}
+.bg-sub {
+	background-color: #069;
+	color: #fff
+}
+.button.bg-main {
+	background-color: #f90;
+	border-color: #f70
+}
+.button.border-main {
+	border-color: #0ae;
+	color: #0ae
+}
+.pointer.border-main li {
+	border-color: #0ae
+}
+.pointer.border-main li.active {
+	background-color: #0ae
+}
+.border-main {
+	border-color: #0ae
+}
+.w100 {
+	width: 150px;
+}
+.icon-navicon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.nav-navicon .input-group .input {
+	width: auto;
+	float: right
+}
+@media only screen and (max-width: 1200px) {
+.logo {
+	padding-top: 0px;
+}
+.nav-navicon {
+	margin-top: 10px;
+}
+}
+@media only screen and (max-width: 992px) {
+.wrap-header .container {
+	width: 100%;
+}
+.logo {
+	padding-top: 0px;
+}
+.nav-navicon {
+	margin-top: -40px;
+}
+}
+@media only screen and (max-width: 768px) {
+.logo {
+	padding-top: 10px;
+}
+}
+.icon-navicon {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+.nav-menu li.active, .nav-menu li:hover {
+	background-color: rgba(0,153,255,1);
+}
+.nav-pills .active a, .nav-pills a:hover {
+	background-color: rgba(0,153,255,1);
+	color: #fff
+}
+.nav-inline.nav-menu ul a:hover {
+	background-color: rgba(0,153,255,1);
+}
+.bg-inverse .nav li a:hover, .bg-inverse .nav .active a {
+	background-color: rgba(0,153,255,1);
+}
+.nav a {
+	color: #333;
+	text-align: left;
+}
+.nav-menu li:hover drop-menu a {
+	background-color: #ddd;
+	color: #222
+}
+.wrap-top {
+	padding: 3px 0px;
+	background-color: #09c
+}
+.wrap-header {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .175);
+}
+.youshi .youshiico {
+	font-size: 66px;
+	display: block;
+	color: #f90
+}
+.prolist h3 {
+	padding: 8px 0px;
+	text-align: center;
+}
+.typelist {
+	padding: 10px 0px;
+}
+.proitem {
+	padding: 10px;
+}
+.proitem img {
+	padding: 10px;
+	width: 100%;
+	border: solid 1px #999;
+}
+.newsitem .news-date {
+	text-align: center;
+	display: inline-block;
+	float: left;
+	width: 5rem;
+	height: 5rem;
+	background: #f2f2f2;
+}
+.newsitem li {
+	border-bottom: dashed 1px #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+.newsitem .news-date1 {
+	text-align: center;
+	color: #666666;
+	font-size: 1.5625rem;
+	margin-top: 0.6rem;
+}
+.newsitem .news-date2 {
+	text-align: center;
+	color: #999999;
+	font-size: 0.8rem;
+}
+.newsitem .news-bodys {
+	padding: 0 0.875rem;
+	overflow: hidden;
+	zoom: 1;
+}
+.newsitem .news-bodys h3 {
+	word-wrap: break-word;
+	overflow: hidden;
+}
+.newsitem .news-bodys p {
+	word-wrap: break-word;
+	overflow: hidden;
+	line-height: 1.15rem;
+	font-size: 0.75rem;
+	color: #999;
+	margin-top: 10px;
+}
+.jobsitem {
+}
+.jobsitem ul {
+	padding: 0px;
+}
+.jobsitem li {
+	border: solid 1px #ddd;
+	background-color: #f9f9f9;
+	margin-bottom: 10px;
+}
+.jobsitem li h3 {
+	padding: 10px 15px;
+}
+.jobsitem li .jobs-info {
+	padding: 10px 10px;
+}
+.jobs-info div {
+	border-bottom: dashed 1px #ddd;
+	padding: 5px;
+}
+.jobsitem li .jobs-bodys {
+	padding: 10px 15px;
+}
+.nav.nav-sitemap a {
+	color: #fff
+}
+.nav-sitemap ul a {
+	padding-left: 0px;
+	color: #fff
+}
+.foot-weixin {
+	width: 120px;
+}
+.bg-link {
+	background: #f5f5f5;
+	border-top: solid 1px #ddd;
+}
+.bg-link a {
+	line-height: 28px;
+}
+.product-about li {
+	line-height: 3rem;
+	border-bottom: dashed 1px #aaa;
+}
+.news-line {
+	text-align: center;
+	border: dashed 1px #aaa;
+	margin-bottom: 40px;
+}
+.news-body {
+	margin: 20px auto;
+}
+.order-tip {
+	color: #fff;
+	padding-left: 25px;
+}
+.order-tip .con {
+	border: dashed 1px #aaa;
+	line-height: 2.5rem
+}
+.bread {
+	margin: 8px 0px;
+	font-size: 13px;
+	color: #555
+}
+
+/*模板易源码模版网新增翻页样式 各类模版第一站 www.AdminBaBy.Com*/
+.pagess {clear: both;margin: 20px;overflow: hidden;margin-left: 0px;text-align: center;font-size:12px}
+.pagess ul li { display:inline-block;border: 1px solid #ccc;padding: 2px 9px;margin: 0 3px;line-height: 20px;background: #fff;color:#999}
+.pagess ul li:hover{ background:#ccc; color:#fff;border: 1px solid #ccc}
+.pagess ul li:hover a{color:#fff;}
+.pagess ul li.thisclass {display: inline-block;border: 1px solid #ccc;padding: 2px 9px;margin: 0 3px;background: #ccc;color: #fff;}
+.pagess ul li.thisclass a {color: #fff;}
+.pagess ul li a{ display:block;color:#999}
+.pagess ul li a:hover {color: #fff; }
+
+#dituContent img{ max-width:inherit !important}
+
+#AdminBaBy.Com img{ max-width:100% !important; height:auto !important}
+.AdminBaBy.Com img{ max-width:100% !important; height:auto !important}

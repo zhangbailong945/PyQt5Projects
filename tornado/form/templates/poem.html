@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head><title>信息</title></head>
+    <body>
+        <h1>你输入的信息是：</h1>
+        <p></p>
+            你叫{{name}},今年{{age}}岁，性别{% if sex==1 %}男{% else %}女{% end %},喜欢{{ ','.join(str(h) for h in hobbys ) }}!
+        </p>
+ 
+    </body>
+</html>

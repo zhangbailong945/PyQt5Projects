@@ -1,11 +1,14 @@
 from PyQt5.QtCore import Qt,QSettings,QVariant,QPoint,QSize
 from PyQt5.QtWidgets import QApplication,QWidget,QVBoxLayout,QPushButton,QLabel\
     ,QColorDialog
-from PyQt5.QtGui import *
+from PyQt5.QtGui import QColor
 import sys,os,time
 from ColourfulWidget import ColourfulWidget
 from CommonUtil import Signals
 from PreviewWidget import PreviewWidget
+from CommonUtil import Setting
+from ThemeManager import ThemeManager
+from GradientUtils import GradientUtils
 
 class MyColorDialog(QWidget):
 
@@ -17,12 +20,27 @@ class MyColorDialog(QWidget):
     
     def __init__(self,*args,**kwargs):
         super(MyColorDialog,self).__init__(*args,**kwargs)
+        self.setObjectName('MyQWidget')
         self.initUI()
         # 预览界面
         self.previewWidget = PreviewWidget(self)
         self.previewWidget.setVisible(False)
         # 初始化信号槽
         self._initSignals()
+        colourful=Setting.value('colourful')
+        if colourful:
+            ThemeManager.loadFont()
+            if isinstance(colourful,QColor):
+                print(111)
+                ThemeManager.loadColourfulTheme(colourful)
+            else:
+                # json数据转渐变
+                print(2222)
+                ThemeManager.loadColourfulTheme(
+                    GradientUtils.toGradient(colourful))
+        else:
+            ThemeManager.loadTheme()
+        
     
     def _initSignals(self):
         # 点击颜色
@@ -55,17 +73,12 @@ class MyColorDialog(QWidget):
     
     
     def readSettings(self):
-        path='./settings.ini'
-        if os.path.exists(path) and os.path.isfile(path):
-            settings=QSettings(path,QSettings.IniFormat)
-            pos=settings.value("pos",QVariant(QPoint(200,200)))
-            size=settings.value("size",QVariant(QSize(400,400)))
-            styleTemplate=settings.value('styleTemplate').replace('\n','')
-            self.setStyleSheet(styleTemplate)
-            self.resize(size)
-            self.move(pos)
-        else:
-            return
+        pos=Setting.value("pos",QVariant(QPoint(200,200)))
+        size=Setting.value("size",QVariant(QSize(400,400)))
+        styleTemplate=Setting.value('styleTemplate','\n').replace('\n','')
+        self.setStyleSheet(styleTemplate)
+        self.resize(size)
+        self.move(pos)
     
     def showSkinDialog(self):
         self.skinDialog=ColourfulWidget()
@@ -79,16 +92,14 @@ class MyColorDialog(QWidget):
         if color.isValid():
 
             self.styleTemplate=self.styleTemplate.format(color.red(),color.green(),color.blue())
-            settings=QSettings('./settings.ini',QSettings.IniFormat)
-            settings.setValue('styleTemplate',self.styleTemplate)
-            styleTemplate=settings.value('styleTemplate').replace('\n','')
+            Setting.setValue('styleTemplate',self.styleTemplate)
+            styleTemplate=Setting.value('styleTemplate').replace('\n','')
             self.setStyleSheet(styleTemplate)
             
     
     def writeSettings(self):
-        settings=QSettings('./settings.ini',QSettings.IniFormat)
-        settings.setValue('pos',QVariant(self.pos()))
-        settings.setValue('size',QVariant(self.size()))
+        Setting.setValue('pos',QVariant(self.pos()))
+        Setting.setValue('size',QVariant(self.size()))
     
     def closeEvent(self,event):
         self.writeSettings()
