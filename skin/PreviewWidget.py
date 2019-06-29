@@ -74,7 +74,6 @@ class PreviewWidget(QWidget, Ui_FormPreviewWidget):
                 QPixmap(poc).scaledToWidth(400, Qt.SmoothTransformation))
             return
         elif which == self.Color:
-            print(111)
             ThemeManager.loadColourfulTheme(poc, self._UiMainWindow, {
                                             'widgetMain': 'widgetMain1'})
         # 对隐藏窗口截图
@@ -107,5 +106,5 @@ class PreviewWidget(QWidget, Ui_FormPreviewWidget):
                 Setting.setValue('colourful', self._poc)
             else:
                 # 渐变需要转成字典数据
-                Setting.setValue('colourful', GradientUtils.toJson(self._poc))
+                Setting.setValue('colourful',GradientUtils.toJson(self._poc))
             Setting.setValue('picture', None)
