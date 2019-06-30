@@ -2,9 +2,9 @@
 
 {% block head %}
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>响应式电子元件电路板类网站织梦模板</title>
-<meta name="description" content="响应式电子元件电路板类网站织梦模板 html5电子产品企业通用网站源码下载（自适应手机版） - 模板易源码模版网 - Www.CnCnLe.com">
-<meta name="keywords" content="企业通用网站源码,电子元件织梦模板">
+<title>电子企业通用模板</title>
+<meta name="description" content="电子企业通用模板">
+<meta name="keywords" content="电子企业通用模板">
 <meta name="author" content="order by AdminBaBy.Com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,14 +15,14 @@
 
 
 {% block css %}
-<link href="{{ static_url('css/style.css') }}" rel="stylesheet">
-<link href="{{ static_url('css/pintuer.css') }}" rel="stylesheet">
+<link href="{{ static_url('index/css/style.css') }}" rel="stylesheet">
+<link href="{{ static_url('index/css/pintuer.css') }}" rel="stylesheet">
 {% end %}
 
 {% block js %}
-<script src="{{ static_url('js/jquery.js') }}"></script>
-<script src="{{ static_url('js/pintuer.js') }}"></script>
-<script src="{{ static_url('js/respond.min.js') }}"></script>
+<script src="{{ static_url('index/js/jquery.js') }}"></script>
+<script src="{{ static_url('index/js/pintuer.js') }}"></script>
+<script src="{{ static_url('index/js/respond.min.js') }}"></script>
 {% end %}
 
 
@@ -36,7 +36,7 @@
           <div class="line">
             <div class="xl12 xs12 xm2 xb3 padding-top logo">
               <button class="button icon-navicon float-right" data-target="#header-demo3"></button>
-              <a href="http://demo691.adminbaby.com/"><img src="{{ static_url('images/logo.png') }}"></a> </div>
+              <a href="http://demo691.adminbaby.com/"><img src="{{ static_url('index/images/logo.png') }}"></a> </div>
             <div class=" xl12 xs12 xm10 xb9 nav-navicon" id="header-demo3">
               <div class="text-right">
                 <form name="formsearch" action="http://demo691.adminbaby.com/plus/search.php">
@@ -50,9 +50,7 @@
               </div>
               <div class="text-right padding-big-top navbar navbar-big">
                 <ul class="nav nav-menu nav-inline nav-pills text-right">
-                    {% for menu in myMenus %}
-                       {% module Menu(menu) %}
-                    {% end %}
+                    {% module Menus() %}
                 </ul>
               </div>
             </div>
@@ -66,9 +64,9 @@
 <div class="banner" data-pointer="1" data-interval="5" data-item="1" data-small="1" data-middle="1" data-big="1"
     data-style="border-main">
     <div class="carousel" style="width: 2698px; left: 0px;">
-        <div class="item" style="width: 1349px;"><a><img src="{{ static_url('images/1-1PH6092615419.jpg') }}" alt="幻灯2"></a>
+        <div class="item" style="width: 1349px;"><a><img src="{{ static_url('index/images/1-1PH6092615419.jpg') }}" alt="幻灯2"></a>
         </div>
-        <div class="item" style="width: 1349px;"><a><img src="{{ static_url('images/1-1PH6092551950.jpg') }}" alt="幻灯1"></a>
+        <div class="item" style="width: 1349px;"><a><img src="{{ static_url('index/images/1-1PH6092551950.jpg') }}" alt="幻灯1"></a>
         </div>
     </div>
     <ul class="pointer border-main" style="left: 645.5px;">
@@ -119,17 +117,17 @@
                 data-big="1" data-style="border-main">
                 <div class="carousel" style="width: 3300px; left: -1650px;">
                     <div class="item" style="width: 550px;"><a href="http://demo691.adminbaby.com/a/case/39.html"><img
-                                src="{{ static_url('images/1-1PH61116432U.jpg') }}" alt="案例展示三"></a></div>
+                                src="{{ static_url('index/images/1-1PH61116432U.jpg') }}" alt="案例展示三"></a></div>
                     <div class="item" style="width: 550px;"><a href="http://demo691.adminbaby.com/a/case/38.html"><img
-                                src="{{ static_url('images/1-1PH6111624531.jpg') }}" alt="案例展示二"></a></div>
+                                src="{{ static_url('index/images/1-1PH6111624531.jpg') }}" alt="案例展示二"></a></div>
                     <div class="item" style="width: 550px;"><a href="http://demo691.adminbaby.com/a/case/9.html"><img
-                                src="{{ static_url('images/1-1PH6111605359.jpg') }}" alt="案例展示四"></a></div>
+                                src="{{ static_url('index/images/1-1PH6111605359.jpg') }}" alt="案例展示四"></a></div>
                     <div class="item" style="width: 550px;"><a href="http://demo691.adminbaby.com/a/case/8.html"><img
-                                src="{{ static_url('images/1-1PH611154A00.jpg') }}" alt="案例展示五"></a></div>
+                                src="{{ static_url('index/images/1-1PH611154A00.jpg') }}" alt="案例展示五"></a></div>
                     <div class="item" style="width: 550px;"><a href="http://demo691.adminbaby.com/a/case/7.html"><img
-                                src="{{ static_url('images/1-1PH611152C00.jpg') }}" alt="案例展示六"></a></div>
+                                src="{{ static_url('index/images/1-1PH611152C00.jpg') }}" alt="案例展示六"></a></div>
                     <div class="item" style="width: 550px;"><a href="http://demo691.adminbaby.com/a/case/5.html"><img
-                                src="{{ static_url('images/1-1PH6111503130.jpg') }}" alt="案例展示一"></a></div>
+                                src="{{ static_url('index/images/1-1PH6111503130.jpg') }}" alt="案例展示一"></a></div>
                 </div>
                 <ul class="pointer border-main" style="left: 214.5px;">
                     <li value="1" class=""></li>
@@ -161,35 +159,35 @@
                 href="http://demo691.adminbaby.com/a/products/lm5/">产品五类</a> </div>
         <div class="container padding-big prolist">
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/46.html"> <img
-                        src="{{ static_url('images/1-1PH6111402610.jpg') }}" alt="产品名称7">
+                        src="{{ static_url('index/images/1-1PH6111402610.jpg') }}" alt="产品名称7">
                     <h3>产品名称7</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/45.html"> <img
-                        src="{{ static_url('images/1-1PH6111331b5.jpg') }}" alt="产品名称8">
+                        src="{{ static_url('index/images/1-1PH6111331b5.jpg') }}" alt="产品名称8">
                     <h3>产品名称8</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/43.html"> <img
-                        src="{{ static_url('images/1-1PH611130I93.jpg') }}" alt="产品名称6">
+                        src="{{ static_url('index/images/1-1PH611130I93.jpg') }}" alt="产品名称6">
                     <h3>产品名称6</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/42.html"> <img
-                        src="{{ static_url('images/1-1PH6111243434.jpg') }}" alt="产品名称5">
+                        src="{{ static_url('index/images/1-1PH6111243434.jpg') }}" alt="产品名称5">
                     <h3>产品名称5</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/41.html"> <img
-                        src="{{ static_url('images/1-1PH611121S37.jpg') }}" alt="产品名称4">
+                        src="{{ static_url('index/images/1-1PH611121S37.jpg') }}" alt="产品名称4">
                     <h3>产品名称4</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/40.html"> <img
-                        src="{{ static_url('images/1-1PH6111154264.jpg') }}" alt="产品名称3">
+                        src="{{ static_url('index/images/1-1PH6111154264.jpg') }}" alt="产品名称3">
                     <h3>产品名称3</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/4.html"> <img
-                        src="{{ static_url('images/1-1PH611112Y38.jpg') }}" alt="产品名称2">
+                        src="{{ static_url('index/images/1-1PH611112Y38.jpg') }}" alt="产品名称2">
                     <h3>产品名称2</h3>
                 </a> </div>
             <div class="xl6 xs6 xm4 xb3 proitem"> <a href="http://demo691.adminbaby.com/a/products/lm1/3.html"> <img
-                        src="{{ static_url('images/1-1PH611105BK.jpg') }}" alt="产品名称1">
+                        src="{{ static_url('index/images/1-1PH611105BK.jpg') }}" alt="产品名称1">
                     <h3>产品名称1</h3>
                 </a> </div>
 
@@ -222,7 +220,7 @@
                 href="http://demo691.adminbaby.com/a/news/cpzs/">产品知识</a> </div>
         <div class="container padding-big">
             <div class="hidden-l hidden-s hidden-m xb4 newsitem padding-big-top"> <img
-                    src="{{ static_url('images/news.jpg') }}" height="300" width="500"> </div>
+                    src="{{ static_url('index/images/news.jpg') }}" height="300" width="500"> </div>
             <div class="xl12 xs12 xm6 xb4 newsitem padding-big-top">
                 <ul>
                     <li class="clearfix"> <a href="http://demo691.adminbaby.com/a/news/gsxw/22.html"
@@ -380,7 +378,7 @@
         </div>
         <div class="hidden-l hidden-s xm3 xb2">
             <h4 class="padding-bottom">关注官方微信</h4>
-            <img class="foot-weixin" src="{{ static_url('images/weixin.jpg') }}">
+            <img class="foot-weixin" src="{{ static_url('index/images/weixin.jpg') }}">
         </div>
     </div>
 </div>

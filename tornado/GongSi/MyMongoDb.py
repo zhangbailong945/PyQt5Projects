@@ -55,9 +55,9 @@ class MyMongoDb(object):
         '''
         if self.db_status():
             if column is None:
-                return self.db[collection].find(condition)
+                return list(self.db[collection].find(condition))
             else:
-                return self.db[collection].find(condition,column)
+                return list(self.db[collection].find(condition,column))
         else:
             return None
     

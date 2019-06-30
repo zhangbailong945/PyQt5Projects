@@ -1,0 +1,200 @@
+{% extends 'main.html' %}
+
+{% block head %}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>关于我们</title>
+<meta name="description" content="关于我们">
+<meta name="keywords" content="关于我们">
+<meta name="author" content="order by AdminBaBy.Com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="email=no" name="format-detection">
+{% end %}
+
+
+{% block css %}
+<link href="{{ static_url('css/style.css') }}" rel="stylesheet">
+<link href="{{ static_url('css/pintuer.css') }}" rel="stylesheet">
+{% end %}
+
+{% block js %}
+<script src="{{ static_url('js/jquery.js') }}"></script>
+<script src="{{ static_url('js/pintuer.js') }}"></script>
+<script src="{{ static_url('js/respond.min.js') }}"></script>
+{% end %}
+
+
+{% block header%}
+
+<div class="wrap-header">
+        <div class="layout bg-black wrap-top">
+          <div class="container height-big text-white"> <span class="hidden-l">广州某某电子元件有限公司欢迎您！</span> </div>
+        </div>
+        <div class="container padding-top padding-big-bottom ">
+          <div class="line">
+            <div class="xl12 xs12 xm2 xb3 padding-top logo">
+              <button class="button icon-navicon float-right" data-target="#header-demo3"></button>
+              <a href="http://demo691.adminbaby.com/"><img src="{{ static_url('images/logo.png') }}"></a> </div>
+            <div class=" xl12 xs12 xm10 xb9 nav-navicon" id="header-demo3">
+              <div class="text-right">
+                <form name="formsearch" action="http://demo691.adminbaby.com/plus/search.php">
+                  <input type="hidden" name="kwtype" value="0">
+                  <div class="input-group text-right">
+                    <input type="text" class="input border-main" name="q" size="30" placeholder="关键词">
+                    <span class="addbtn">
+                    <button type="submit" class="button bg-main">搜!</button>
+                    </span> </div>
+                </form>
+              </div>
+              <div class="text-right padding-big-top navbar navbar-big">
+                <ul class="nav nav-menu nav-inline nav-pills text-right">
+                    {% module Menus() %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% end %}
+
+{% block banner %}
+
+<div class="layout inner-banner"> <img src="/skin/images/about.jpg" />
+</div>
+<!--end banner-->
+
+{% end %}
+
+{% block about %}
+
+
+
+<div class="layout bg-gray margin-big-bottom">
+    <div class="container">
+        <ul class="bread">
+            <a href='http://demo691.adminbaby.com/'>主页</a><a href='/a/about/'>关于我们</a>
+        </ul>
+    </div>
+</div>
+<div class="layout padding-big-top padding-big-bottom">
+    <div class="container" id="AdminBaBy.Com">
+        <h1 class="padding-big-bottom">关于我们</h1>
+        <p>
+            <p>
+                是全球技术领先企业，通过原创的&ldquo;省、小、精技术&rdquo;，倾力创建将人、物与信息互联的新时代。爱普生的主要产品线涵盖喷墨打印机、数码打印系统、3LCD投影机以及智能眼镜、传感系统和工业机器人，致力于在打印、视觉交流、可穿戴设备、机器人等领域持续创新，超越顾客的期待。
+            </p>
+            <p>
+                位于日本的精工爱普生公司是爱普生集团的核心企业。爱普生集团在全球设有86家公司，员工逾80,000人。爱普生不断努力减少对环境的影响，为其所在地区的发展做出贡献，并以此为荣。</p>
+            <p>
+                爱普生（中国）有限公司成立于1998年，总部设在北京，负责统括爱普生在中国的投资和业务拓展。目前，爱普生在华累计投资已超过8.22亿美元（约合50亿元人民币），共有12家制造、销售及服务等机构，员工逾16,000人。
+            </p>
+            <p>
+                爱普生在中国开展的业务主要有打印机、扫描仪、投影机等信息关联产品业务，电子元器件业务以及工业机器人业务。其产品以卓越的品质和节能环保的特点，赢得了中国消费者的厚爱。立足于中国市场，爱普生始终本着&ldquo;挑战与创新&rdquo;理念，不断将一系列先进技术及应用方案引入中国，从而使中国消费者能够与世界同步，享受创新科技带来的完美体验。爱普生不断贡献于中国的环保和教育事业，作为一名优秀的中国企业公民而倍感自豪。
+            </p>
+            <p>
+                目前，爱普生（中国）有限公司已取得的资质包括：</p>
+            <p>
+                -2004年5月，爱普生（中国）有限公司经中国商务部批准，成为中国首家获得&ldquo;地区总部&rdquo;资格认定的外商独资企业。</p>
+            <p>
+                -&nbsp;ISO14001环境管理体系认证。</p>
+            <p>
+                -&nbsp;ISO9001质量管理体系认证。</p>
+            <p>
+                -&nbsp;企业信用等级评价AAA级认证企业。</p>
+        </p>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--end about-->
+
+
+{% end %}
+
+
+{% block links %}
+<div class="bg-link">
+    <div class="container">
+         <b>友情链接：</b> 
+         {% for link in myLinks %}
+            {% module FriendlyLinks(link) %}
+         {% end %}
+    </div>
+</div>
+{% end %}
+
+
+
+
+{% block footer %}
+<div class="container-layout bg-black2 bg-inverse padding-big-top padding-big-bottom clearfix">
+    <div class="table-responsive padding hidden-l container">
+        <div class="xl12 xs12 xm9 xb10">
+            <ul class="nav nav-sitemap">
+                <li><a href="http://demo691.adminbaby.com/a/about/">关于我们</a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li><a href="http://demo691.adminbaby.com/a/news/">新闻动态</a>
+                    <ul>
+
+                        <li><a href="http://demo691.adminbaby.com/a/news/gsxw/">公司新闻</a></li>
+
+                        <li><a href="http://demo691.adminbaby.com/a/news/hyxw/">行业新闻</a></li>
+
+                        <li><a href="http://demo691.adminbaby.com/a/news/cpzs/">产品知识</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="http://demo691.adminbaby.com/a/products/">产品中心</a>
+                    <ul>
+
+                        <li><a href="http://demo691.adminbaby.com/a/products/lm1/">产品一类</a></li>
+
+                        <li><a href="http://demo691.adminbaby.com/a/products/lm2/">产品二类</a></li>
+
+                        <li><a href="http://demo691.adminbaby.com/a/products/lm3/">产品三类</a></li>
+
+                        <li><a href="http://demo691.adminbaby.com/a/products/lm4/">产品四类</a></li>
+
+                        <li><a href="http://demo691.adminbaby.com/a/products/lm5/">产品五类</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="http://demo691.adminbaby.com/a/case/">案例展示</a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li><a href="http://demo691.adminbaby.com/a/rongyu/">荣誉资质</a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li><a href="http://demo691.adminbaby.com/a/jishu/">技术优势</a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li><a href="http://demo691.adminbaby.com/a/contact/">联系我们</a>
+                    <ul>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="hidden-l hidden-s xm3 xb2">
+            <h4 class="padding-bottom">关注官方微信</h4>
+            <img class="foot-weixin" src="{{ static_url('images/weixin.jpg') }}">
+        </div>
+    </div>
+</div>
+<div class="container-layout bg-sub padding-top padding-bottom clearfix">
+    <div class="text-center"> Copyright © 模板易源码模版网 版权所有 
+        <a href="http://www.dedecms.com/" target="_blank">Power by DedeCms</a>
+        <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">皖ICP12345678</a>
+    </div>
+</div>
+{% end %}

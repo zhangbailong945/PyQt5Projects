@@ -19,6 +19,7 @@ class Application(tornado.web.Application):
         self.installer.createFriendlyLinks()
         handlers = [
             (r"/", IndexHandler),
+            (r'/about',AboutHandler),
         ]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
@@ -26,7 +27,7 @@ class Application(tornado.web.Application):
             debug=True,
             ui_modules={
             'FriendlyLinks':FriendlyLinksModule,
-            'Menu':MenuModule,
+            'Menus':MenuModule,
             }
         )
 
@@ -42,7 +43,7 @@ class FriendlyLinksModule(tornado.web.UIModule):
     '''
 
     def render(self,link):
-        return self.render_string('modules/index/links.html',link=link)
+        return self.render_string('index/modules/index/links.html',link=link)
     
     #在<body> 之前添加html代码
     def html_body(self):
@@ -58,36 +59,28 @@ class FriendlyLinksModule(tornado.web.UIModule):
     
     #模块引入css文件
     def css_files(self):
-        return "static/css/style.css"
+        return "css/style.css"
 
     #模块引入css文件
     def javascript_files(self):
-        return "static/js/jquery.js"
+        return "js/jquery.js"
+
+class AboutHandler(tornado.web.RequestHandler):
+
+    def get(self):
+        self.render(
+            'index/about.html'
+        )
 
 
 class MenuModule(tornado.web.UIModule):
     '''
-    主页菜单模块
+    主页->菜单模块
     '''
-
-    def render(self,menu):
-        return self.render_string('modules/index/menu.html',menu=menu)
-
-
-#主页拦截器
-class IndexHandler(tornado.web.RequestHandler):
-
-    def get(self):
+    def __init__(self,*args,**kwargs):
+        super(MenuModule,self).__init__(*args,**kwargs)
         self.dbHelper=MyMongoDb()
-        self.myMenus=self.getMenus()
-        self.myLinks=self.getLinks()
-        self.treeData(self.myLinks)
-        self.render(
-            'index.html',
-            myMenus=self.myMenus,
-            myLinks=self.myLinks, 
-        )
-    
+
     def getMenus(self):
         '''
         获取菜单集合
@@ -95,6 +88,63 @@ class IndexHandler(tornado.web.RequestHandler):
         collection='menu'
         condition={"status":1}
         return self.dbHelper.find(collection,condition)
+
+    def initLevelMenu(self,menuData,id,level=0):
+        '''
+        @params MenuData 菜单集合 \n
+        @params id 菜单ID \n
+        @params level 菜单层级 \n
+        '''
+        menuList=[]
+        for menu in menuData:
+            if menu['pid']==id:
+                menu['level']=level
+                menu['childMenu']=self.initLevelMenu(menuData,menu['_id'],level+1)
+                menuList.append(menu)
+        return menuList
+
+    def render(self):
+        menuData=self.getMenus()
+        menus=self.initLevelMenu(menuData,0,0)
+        html=""
+        for menu in menus:
+            html+='<li class=""><a href="" class="topa">'+menu["name"]+'</a>'
+            if len(menu['childMenu'])>0:
+                html+=self.getChild(menu['childMenu'])
+                html+="</li>"
+            else:
+                html+='<ul style="display:none"></ul></li>'
+        return html
+    
+    def getChild(self,menus):
+        html="<ul class='drop-menu'>"
+        for menu in menus:
+            html+='<li class=""><a href="javascript:;" class="topa">'+menu["name"]+'</a>'
+            if len(menu['childMenu'])>0:
+                html+=self.getChild(menu['childMenu'])
+                html+="</li>"
+            else:
+                html+='<ul style="display:none"></ul></li>'
+        html+="</ul>"
+        return html
+            
+
+
+
+
+class IndexHandler(tornado.web.RequestHandler):
+    '''
+    主页拦截器
+    '''
+
+    def get(self):
+        self.dbHelper=MyMongoDb()
+        self.myLinks=self.getLinks()
+        self.render(
+            'index/index.html',
+            myLinks=self.myLinks, 
+        )
+    
     
     def getLinks(self):
         '''
@@ -104,11 +154,7 @@ class IndexHandler(tornado.web.RequestHandler):
         condition={"status":1}
         return self.dbHelper.find(collection,condition)
     
-    def treeData(self,list,pid=0):
-        childList=[]
-        for d in list:
-            if d['pid']==pid:
-                childList.append(d)
+    
 
 
 
