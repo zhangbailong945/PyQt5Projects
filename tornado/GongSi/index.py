@@ -13,18 +13,33 @@ from modules.index.FriendlyLinksModule import FriendlyLinksModule
 from handles.index.IndexHandler import IndexHandler
 from handles.index.AboutHandler import AboutHandler
 
+
+from handles.admin.AdminHandler import AdminHandler
+from handles.admin.WelcomeHandler import WelcomeHandler
+
 define("port",default=8888,help="run localhost:8888 on browser!",type=int)
 
 
 class Application(tornado.web.Application):
+
+
     def __init__(self):
         self.installer=Installer()
         self.installer.createMenu()
         self.installer.createFriendlyLinks()
-        handlers = [
+
+        indexs=[
             (r"/", IndexHandler),
             (r'/about',AboutHandler),
         ]
+
+        admins=[
+            (r"/admin",AdminHandler),
+            (r"/welcome",WelcomeHandler),
+        ]
+
+        handlers=indexs+admins
+
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
