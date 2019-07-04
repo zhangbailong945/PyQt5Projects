@@ -16,5 +16,5 @@ def get_adapter():
 
 if __name__ == "__main__":
     e=get_enforcer(get_model(),get_adapter())
-    print(e.enforce('alice', 'data1', 'read'))
-    print(e.get_roles_for_user('alice'))
+    print(e.enforce('admin2', 'index', 'get'))
+    print(e.get_roles_for_user('admin'))
