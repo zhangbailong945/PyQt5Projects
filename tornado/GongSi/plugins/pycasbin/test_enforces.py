@@ -16,5 +16,12 @@ def get_adapter():
 
 if __name__ == "__main__":
     e=get_enforcer(get_model(),get_adapter())
-    print(e.enforce('admin2', 'index', 'get'))
+    #测试策略是否存在
+    print(e.enforce('zhangsan', 'index', 'get'))
+    #输出用户的角色列表
     print(e.get_roles_for_user('admin'))
+    #print(e.add_policy('zhangsan','index','post'))
+
+    print(e.enforce('zhangsan', 'index', 'post'))
+
+    

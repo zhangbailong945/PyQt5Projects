@@ -1,4 +1,6 @@
 p, superadmin, index, get
 p, superadmin, index, post
+p, editor, index, get
 
 g, admin, superadmin
+g, zhangsan, editor
