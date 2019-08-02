@@ -16,6 +16,7 @@ from handles.index.AboutHandler import AboutHandler
 
 from handles.admin.AdminHandler import AdminHandler
 from handles.admin.WelcomeHandler import WelcomeHandler
+from handles.admin.LoginHandler import LoginHandler
 
 define("port",default=8888,help="run localhost:8888 on browser!",type=int)
 
@@ -36,6 +37,7 @@ class Application(tornado.web.Application):
         admins=[
             (r"/admin",AdminHandler),
             (r"/welcome",WelcomeHandler),
+            (r"/login",LoginHandler)
         ]
 
         handlers=indexs+admins
@@ -45,6 +47,8 @@ class Application(tornado.web.Application):
             static_path=os.path.join(os.path.dirname(__file__), "static"),
             debug=True,
             cookie_secret='6de683f6e8f038f62863fe27a17573e5',
+            xsrf_cookies=True,
+            login_url="/login",
             ui_modules={
             'FriendlyLinks':FriendlyLinksModule,
             'Menus':MenuModule,

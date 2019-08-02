@@ -44,4 +44,4 @@ class BaseHandler(tornado.web.RequestHandler):
         '''
         当前登录用户
         '''
-        return self.get_secure_cookie('user')
+        return self.get_secure_cookie('username')
