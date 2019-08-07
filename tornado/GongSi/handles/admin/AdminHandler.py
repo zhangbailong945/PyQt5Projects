@@ -10,5 +10,6 @@ class AdminHandler(BaseHandler):
     @tornado.web.authenticated
     def get(self):
         return self.render(
-            'admin/index.html'
+            'admin/index.html',
+            username=self.current_user
         )
