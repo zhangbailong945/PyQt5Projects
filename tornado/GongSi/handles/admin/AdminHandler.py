@@ -1,6 +1,7 @@
 import tornado
 
 from handles.BaseHandler import BaseHandler
+from plugins.config.Config import Config
 
 class AdminHandler(BaseHandler):
 
@@ -11,5 +12,6 @@ class AdminHandler(BaseHandler):
     def get(self):
         return self.render(
             'admin/index.html',
-            username=self.current_user
+            username=self.current_user,
+            sitename=Config('config.ini',1).get_key('sitename')
         )

@@ -2,7 +2,7 @@
 
 {% block header %}
 
-<title>欢迎页面-X-admin2.0</title>
+<title>欢迎页面-{{ system['sitename' ]}}</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="{{ static_url('admin/css/font.css')}}">
 <link rel="stylesheet" href="{{ static_url('admin/css/xadmin.css')}}">
@@ -81,7 +81,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <a class="x-a" href="/" target="_blank">tornado 通用企业网站模板</a>
+                            <a class="x-a" href="/" target="_blank">{{ system['sitename']}}</a>
                         </td>
                     </tr>
                 </tbody>
@@ -148,12 +148,12 @@
                 <tbody>
                     <tr>
                         <th>版权所有</th>
-                        <td>loach
-                            <a href="http://www.loachblog.com/" class='x-a' target="_blank">访问官网</a></td>
+                        <td>{{ system['author'] }}
+                            <a href="{{ system['author_website'] }}" class='x-a' target="_blank">访问官网</a></td>
                     </tr>
                     <tr>
                         <th>开发者</th>
-                        <td>loach</td>
+                        <td>{{ system['author'] }}</td>
                     </tr>
                 </tbody>
             </table>
