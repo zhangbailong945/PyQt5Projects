@@ -36,8 +36,8 @@ if __name__ == "__main__":
     #adapter.add_policy(sec=None,ptype='g',rule=['viewer','index','get'])
     #e.add_policy('viewer','index','post') #ok
 
-    #print(e.get_all_roles()) #ok
+    print(e.get_all_roles()) #ok
 
-    print(e.add_policy('zhangsan','index','post'))
+    #print(e.add_policy('zhangsan','index','post'))
 
     
