@@ -11,7 +11,7 @@ class Config(object):
     '''
     *.ini文件 解析类
     '''
-
+    
     def __init__(self,filename,section):
         '''
         :param filename：文件名称 \n
@@ -24,11 +24,12 @@ class Config(object):
     
     def get_key(self,arg):
         '''
-        获取属性内容 静态方法\n
+        获取属性内容\n
         :param arg:属性名称 \n
         :return:属性的值
         '''
         parameter=self.configParser.get(self.configParser.sections()[self.section],arg)
         return parameter
+
 
 

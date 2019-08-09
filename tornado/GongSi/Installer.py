@@ -1,4 +1,6 @@
 from MyMongoDb import MyMongoDb
+from plugins.common.CommonUtils import CommonUtils
+import hashlib
 
 
 class Installer(object):
@@ -55,3 +57,36 @@ class Installer(object):
             else:
                 print('初始化友情链接失败！')
         return
+    
+    def createUserGroup(self):
+        '''
+        初始化用户组
+        '''
+        collection="group"
+        data = [
+            {"name_en": "superadmin", "name_cn": "超级管理员", "status": 1},
+        ]
+        if not self.Db.checkCollectionIsExist(collection):
+            data = self.Db.insert_many(collection, data)
+            if len(data) > 0:
+                print('初始化用户组成功！')
+            else:
+                print('初始化用户组失败！')
+        return
+
+    def createUser(self):
+        '''
+        初始化用户
+        '''
+        collection="user"
+        data = [
+            {"name_en": "admin", "name_cn": "admin","password":CommonUtils.md5('admin','123456'),"group":"superadmin", "status": 1},
+        ]
+        if not self.Db.checkCollectionIsExist(collection):
+            data = self.Db.insert_many(collection, data)
+            if len(data) > 0:
+                print('初始用户组接成功！')
+            else:
+                print('初始化用户组失败！')
+        return
+

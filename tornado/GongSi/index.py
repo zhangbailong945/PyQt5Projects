@@ -23,12 +23,15 @@ define("port",default=8888,help="run localhost:8888 on browser!",type=int)
 
 
 class Application(tornado.web.Application):
+    '''系统'''
 
 
     def __init__(self):
         self.installer=Installer()
         self.installer.createMenu()
         self.installer.createFriendlyLinks()
+        self.installer.createUserGroup()
+        self.installer.createUser()
 
         indexs=[
             (r"/", IndexHandler),
