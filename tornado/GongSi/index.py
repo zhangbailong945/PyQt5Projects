@@ -18,6 +18,7 @@ from handles.admin.AdminHandler import AdminHandler
 from handles.admin.WelcomeHandler import WelcomeHandler
 from handles.admin.LoginHandler import LoginHandler
 from handles.admin.LogoutHandler import LogoutHandler
+from handles.admin.UserHandler import UserHandler
 
 define("port",default=8888,help="run localhost:8888 on browser!",type=int)
 
@@ -42,7 +43,8 @@ class Application(tornado.web.Application):
             (r"/admin",AdminHandler),
             (r"/welcome",WelcomeHandler),
             (r"/login",LoginHandler),
-            (r"/logout",LogoutHandler)
+            (r"/logout",LogoutHandler),
+            (r"/user",UserHandler)
         ]
 
         handlers=indexs+admins

@@ -7,6 +7,7 @@ class UserModel(MongoHelper):
     '''
 
     def __init__(self):
+        super(UserModel,self).__init__()
         self.col='user'
     
     def get_user(self):
