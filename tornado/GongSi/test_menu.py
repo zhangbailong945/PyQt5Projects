@@ -30,7 +30,7 @@ def is_number(number):
     if isinstance(number,int):
         return number
     elif isinstance(number,str):
-        pattern="/^\'(0|[1-9][0-9]*)\'$/"
+        pattern=r"^[1-9]\d*$"
         if (re.match(pattern,number)):
             return int(number)
         else:
@@ -41,7 +41,7 @@ def is_number(number):
 
 if __name__ == "__main__":
     #allmenus=initMenu(menus,0,0)
-    a='25'
+    a="01112"
     print(is_number(a))
 
     

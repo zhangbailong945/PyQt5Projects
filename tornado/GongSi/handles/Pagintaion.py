@@ -1,5 +1,5 @@
 
-import math
+import re,math
 
 class Pagination:
     '''
@@ -19,9 +19,9 @@ class Pagination:
 
 
     def __init__(self,page_total=1,page_num=1,page_current=1,page_url=None,page_show=2):
-        self._page_total=int(page_total)
-        self._page_num=int(page_num)
-        self._page_current=int(page_current)
+        self._page_total=self.is_number(page_total)
+        self._page_num=self.is_number(page_num)
+        self._page_current=self.is_number(page_current)
         self._page_sum=math.ceil(self._page_total/self._page_num) #分页总数=总记录数/每页显示条数 向上取整
 
         if self._page_total<0:
@@ -52,8 +52,26 @@ class Pagination:
             self._page_first=1
         
     
-    def is_num(self,number):
-        if isinstance(int(number),int):
+    def is_number(self,number):
+        '''
+        判断url分页参数，是否为数字
+        '''
+        if isinstance(number,int):
             return number
-        return 1
+        elif isinstance(number,str):
+            pattern=r"^[1-9]\d*$"
+            if (re.match(pattern,number)):
+                return int(number)
+            else:
+                return 1
+        else:
+            return 1
+    
+    def __page_replace(self,page):
+        return self._page_url.replace("{page}",page)
+
+    if self._page_current!=1:
+        return "<a class='prev' href='"+self.__page_replace(self._page_current-1)+"'>上一页</a>"
+
+    
 
