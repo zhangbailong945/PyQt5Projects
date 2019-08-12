@@ -50,3 +50,5 @@ class BaseHandler(tornado.web.RequestHandler):
         username=self.get_current_user()
         if username:
             pass
+    
+    

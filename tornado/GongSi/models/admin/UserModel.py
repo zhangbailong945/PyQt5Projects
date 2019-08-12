@@ -1,5 +1,5 @@
 from plugins.db.MongoHelper import MongoHelper
-from plugins.config.Config import Config
+
 
 class UserModel(MongoHelper):
     '''

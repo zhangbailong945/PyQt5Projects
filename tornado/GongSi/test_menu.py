@@ -25,7 +25,23 @@ def initMenu(menuData,id,level=0):
             menuList.append(menu)
     return menuList
 
+import re
+def is_number(number):
+    if isinstance(number,int):
+        return number
+    elif isinstance(number,str):
+        pattern="/^\'(0|[1-9][0-9]*)\'$/"
+        if (re.match(pattern,number)):
+            return int(number)
+        else:
+            return 1
+    else:
+        return 1
+
 
 if __name__ == "__main__":
-    allmenus=initMenu(menus,0,0)
+    #allmenus=initMenu(menus,0,0)
+    a='25'
+    print(is_number(a))
+
     
