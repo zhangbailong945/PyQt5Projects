@@ -47,8 +47,15 @@ class BaseHandler(tornado.web.RequestHandler):
         return self.get_secure_cookie('username')
 
     def get_current_user_roles(self):
+        '''
+        获取用户角色
+        '''
         username=self.get_current_user()
         if username:
             pass
     
-    
+    def get_request_url(self):
+        '''
+        获取当前的url
+        '''
+        return self.request.uri

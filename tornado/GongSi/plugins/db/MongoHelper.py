@@ -98,15 +98,15 @@ class MongoHelper(object):
             return self.__connect[collection].update_many(data_filter,{"$set",data_revised}).modified_count
         return None
     
-    def find(self,collection,condition,column=None):
+    def find(self,collection,condition,column=None,page):
         '''
         根据条件查询某个集合的数据(查)
         '''
         if self.__connect:
             if column is None:
-                return list(self.__connect[collection].find(condition))
+                return list(self.__connect[collection].find(condition).sikp().limit())
             else:
-                return list(self.__connect[collection].find(condition,column))
+                return list(self.__connect[collection].find(condition,column).skip().limit())
         else:
             return None
     
@@ -116,6 +116,14 @@ class MongoHelper(object):
         '''
         if self.__connect:
             return self.__connect[collection].delete_many(filter=condition).delete_count
+        return None
+
+    def count(self,collection):
+        '''
+        返回集合总数
+        '''
+        if self.__connect:
+            return self.__connect[collection].find().count()
         return None
 
 
@@ -133,4 +141,8 @@ if __name__ == "__main__":
     table=dbHelper.get_collection("goods")
     for good in table.find():
         print(good)
+    print(db.find("ut", {}).count())
+    print(db.update("ut", {"password": ["aaaa", "bbbb"]}))
+    print(db.find("ut", {}, {"password": 1, "username": 1}).count())
+
 '''  
