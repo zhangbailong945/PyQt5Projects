@@ -1,6 +1,7 @@
 import tornado
 
 import tornado.web
+from plugins.common.CommonUtils import CommonUtils
 
 class BaseHandler(tornado.web.RequestHandler):
     '''
@@ -65,3 +66,11 @@ class BaseHandler(tornado.web.RequestHandler):
         获取当前url参数
         '''
         return self.request.query
+
+    def get_page_url(self,url_query):
+        '''
+        获取当前完整链接
+        '''
+        if self.get_request_query()=='':
+            return CommonUtils.url_union(self.get_request_url(),url_query)
+        return self.get_request_url()

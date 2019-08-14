@@ -1,4 +1,6 @@
 import hashlib
+from urllib.parse import urlencode
+
 from plugins.config.Config import Config
 
 
@@ -19,4 +21,11 @@ class CommonUtils(object):
         md5_str=username+password+Config('config.ini',2).get_key('salt') #加盐
         md5.update(md5_str.encode('utf-8')) #编码，否则报错
         return md5.hexdigest()
+
+    @staticmethod
+    def url_union(url,query):
+        '''
+        拼接url和参数
+        '''
+        return url+"?"+urlencode(query)
 
