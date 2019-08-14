@@ -59,3 +59,9 @@ class BaseHandler(tornado.web.RequestHandler):
         获取当前的url
         '''
         return self.request.uri
+
+    def get_request_query(self):
+        '''
+        获取当前url参数
+        '''
+        return self.request.query

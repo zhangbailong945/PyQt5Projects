@@ -98,15 +98,15 @@ class MongoHelper(object):
             return self.__connect[collection].update_many(data_filter,{"$set",data_revised}).modified_count
         return None
     
-    def find(self,collection,condition,column=None,page):
+    def find(self,page,collection,condition,column=None):
         '''
         根据条件查询某个集合的数据(查)
         '''
         if self.__connect:
             if column is None:
-                return list(self.__connect[collection].find(condition).sikp().limit())
+                return list(self.__connect[collection].find(condition).skip(page._page_skip).limit(page._page_num))
             else:
-                return list(self.__connect[collection].find(condition,column).skip().limit())
+                return list(self.__connect[collection].find(condition,column).skip(page._page_skip).limit(page._page_num))
         else:
             return None
     

@@ -11,12 +11,11 @@ class UserModel(MongoHelper):
         self.col='user'
     
     def get_user(self,args):
-        query=dict()
-        query['username']=args['username']
+        query=args['query']
         colum=None
         page_total=self.count(self.col)
         page_current=args['page_current']
         page_num=args['page_num']
         page_url=args['page_url']
         page=Pagination(page_total=page_total,page_num=page_num,page_current=page_current,page_url=page_url,page_show=2)
-        return self.find(self.col,query,colum,page)
+        return self.find(page,self.col,query,colum),page

@@ -65,6 +65,8 @@ class Installer(object):
         collection="group"
         data = [
             {"name_en": "superadmin", "name_cn": "超级管理员", "status": 1},
+            {"name_en": "administrator", "name_cn": "管理员", "status": 1},
+            {"name_en": "editor", "name_cn": "编辑", "status": 1},
         ]
         if not self.Db.checkCollectionIsExist(collection):
             data = self.Db.insert_many(collection, data)
@@ -81,6 +83,19 @@ class Installer(object):
         collection="user"
         data = [
             {"name_en": "admin", "name_cn": "admin","password":CommonUtils.md5('admin','123456'),"group":"superadmin", "status": 1},
+            {"name_en": "test1", "name_cn": "test1","password":CommonUtils.md5('test1','123456'),"group":"administrator", "status": 1},
+            {"name_en": "test2", "name_cn": "test2","password":CommonUtils.md5('test2','123456'),"group":"administrator", "status": 1},
+            {"name_en": "test3", "name_cn": "test3","password":CommonUtils.md5('test3','123456'),"group":"administrator", "status": 1},
+            {"name_en": "test4", "name_cn": "test4","password":CommonUtils.md5('test4','123456'),"group":"editor", "status": 1},
+            {"name_en": "test5", "name_cn": "test5","password":CommonUtils.md5('test5','123456'),"group":"editor", "status": 1},
+            {"name_en": "test6", "name_cn": "test6","password":CommonUtils.md5('test6','123456'),"group":"editor", "status": 1},
+            {"name_en": "test7", "name_cn": "test7","password":CommonUtils.md5('test7','123456'),"group":"editor", "status": 1},
+            {"name_en": "test8", "name_cn": "test8","password":CommonUtils.md5('test8','123456'),"group":"editor", "status": 1},
+            {"name_en": "test9", "name_cn": "test9","password":CommonUtils.md5('test9','123456'),"group":"editor", "status": 1},
+            {"name_en": "test10", "name_cn": "test10","password":CommonUtils.md5('test10','123456'),"group":"editor", "status": 1},
+            {"name_en": "test11", "name_cn": "test11","password":CommonUtils.md5('test11','123456'),"group":"editor", "status": 1},
+            {"name_en": "test12", "name_cn": "test12","password":CommonUtils.md5('test12','123456'),"group":"editor", "status": 1},
+            {"name_en": "test13", "name_cn": "test13","password":CommonUtils.md5('test13','123456'),"group":"editor", "status": 1},
         ]
         if not self.Db.checkCollectionIsExist(collection):
             data = self.Db.insert_many(collection, data)
