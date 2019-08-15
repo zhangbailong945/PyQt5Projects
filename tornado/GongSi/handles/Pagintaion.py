@@ -77,7 +77,8 @@ class Pagination:
     
     def __page_replace(self,page):
         page=str(page)
-        return self._page_url.replace("{page}",page)
+        url='page_current='+page
+        return re.sub(r'page_current=[1-9]\d*',url,self._page_url)
 
     def __page_home(self):
         '''
@@ -114,7 +115,8 @@ class Pagination:
             return "<a class='num' href='"+self.__page_replace(self._page_sum)+"'>尾页</a>"
         else:
             return ""
-    
+
+    @property
     def show_pages(self):
         page_str="<div>"
         page_str+=self.__page_home()
@@ -136,8 +138,9 @@ class Pagination:
         return page_str
 
     
-    
 
+'''
 if __name__ == "__main__":
     page=Pagination(page_total=1,page_num=1,page_current=1,page_url='{page}',page_show=2)
-    print(page.show_pages())
+    print(page.show_pages)
+'''

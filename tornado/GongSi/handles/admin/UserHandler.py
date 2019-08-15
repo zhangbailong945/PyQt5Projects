@@ -14,7 +14,7 @@ class UserHandler(BaseHandler):
         #sort_flag=self.get_argument("sort_flag","")
         db_query=dict()
         page_args=dict()
-        db_query['name_en']=name_en
+        #db_query['name_en']=name_en
         
         
         page_args['page_num']=page_num
@@ -27,9 +27,5 @@ class UserHandler(BaseHandler):
         page_args['query']=db_query
         page_args['page_url']=self.get_page_url(url_query)
         users,page=UserModel().get_user(page_args)
-
-        print(self.get_page_url(url_query))
-        for user in users:
-            print(user['name_en'])
         return self.render('admin/user-list.html',users=users,page=page)
 
