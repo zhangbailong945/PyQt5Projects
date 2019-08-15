@@ -27,10 +27,8 @@ class Pagination:
         self._page_show=self.is_number(page_show)
         self._page_url=page_url
         
-        if self._page_current==1:
-            self._page_skip=0
-        else:
-            self._page_skip=self._page_current*self._page_num #skip(num) 等于当前页*每页显示数
+
+        self._page_skip=(self._page_current-1)*self._page_num #skip(num) 等于当前页*每页显示数
 
         if self._page_total<0:
             self._page_total=0
@@ -126,7 +124,7 @@ class Pagination:
         num=self._page_first
         while(num<=self._page_last):
             if num==self._page_current:
-                page_str+="<a class='current' href='"+self.__page_replace(num)+"'>"+str(num)+"</a>"
+                page_str+="<span class='current' >"+str(num)+"</span>"
             else:
                 page_str+="<a class='num' href='"+self.__page_replace(num)+"'>"+str(num)+"</a>"
             num+=1
