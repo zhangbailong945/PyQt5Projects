@@ -134,6 +134,19 @@ class Pagination:
         page_str+=self.__page_last()
         page_str+='</div>'
         return page_str
+    
+    def get_union_url(self,page_url):
+        '''
+        合并url
+        '''
+        pattern=r'page_num=[1-9]\d*&page_current=[1-9]\d*'
+        add_url='page_num='+str(self._page_num)+'&page_current='+str(self._page_current)
+
+        if re.match(pattern,page_url):
+            return page_url
+        else:
+            return page_url+add_url
+
 
     
 

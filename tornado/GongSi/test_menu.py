@@ -43,11 +43,15 @@ if __name__ == "__main__":
     #allmenus=initMenu(menus,0,0)
     #a="01112"
     #print(is_number(a))
+    '''
     pattern=r'^page_current=[1-9]\d*$'
     url='/user?page_num=10&page_current=1'
     url_replace='page_current=21'
     print(re.sub(r'page_current=[1-9]\d*',url_replace,url))
     if re.match(pattern,url):
         print(1111)
+    '''
+
+
 
     

@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="{{ static_url('admin/css/font.css')}}">
 <link rel="stylesheet" href="{{ static_url('admin/css/xadmin.css')}}">
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="{{ static_url('admin/lib/layui/layui.js?v=5a9c6c9adbbc580644b1cab7840bfa92')}}" charset="utf-8"></script>
-<script type="text/javascript" src="{{ static_url('admin/js/xadmin.js?v=4f7c6f9fb4ebb2cb14c57733848f92b9')}}"></script>
+<script src="{{ static_url('admin/lib/layui/layui.js')}}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ static_url('admin/js/xadmin.js')}}"></script>
 
 {% end %}
 
@@ -15,7 +15,7 @@
 
 <div class="x-body">
     <div class="layui-row">
-      <form class="layui-form layui-col-md12 x-so">
+      <form class="layui-form layui-col-md12 x-so" method="GET">
         <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
         <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
       </form>
@@ -23,7 +23,7 @@
     <xblock>
       <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
       <button class="layui-btn" onclick="x_admin_show('添加用户','./admin-add.html')"><i class="layui-icon"></i>添加</button>
-      <span class="x-right" style="line-height:40px">共有数据：{{ page._page_total }} 条</span>
+      <span class="x-right" style="line-height:40px">共有 <font color="green">{{ page._page_sum }}</font> 页，<font color="green">{{ page._page_total }}</font> 条数据。</span>
     </xblock>
     <table class="layui-table">
       <thead>
@@ -31,7 +31,7 @@
           <th>
             <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
           </th>
-          <th>登录名</th>
+          <th>用户名</th>
           <th>中文名</th>
           <th>角色</th>
           <th>状态</th>
@@ -61,6 +61,7 @@
           </td>
         </tr>
         -->
+        {% if users %}
         {%for user in users %}
         <tr>
           <td>
@@ -70,7 +71,12 @@
           <td>{{ user['name_cn'] }}</td>
           <td>{{ user['name_en'] }}</td>
           <td class="td-status">
+            {% if user['status'] %}
             <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+            {% else %}
+            <span class="layui-btn layui-btn-normal layui-btn-mini layui-btn-disabled">已停用</span></td>
+            {% end %}
+            
           <td class="td-manage">
             <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
               <i class="layui-icon">&#xe601;</i>
@@ -83,6 +89,9 @@
             </a>
           </td>
         </tr>
+        {% end %}
+        {% else %}
+        <tr><td colspan="6"><center><strong><font color="red">没有相关数据!</font></strong></center></td></tr>
         {% end %}
       </tbody>
     </table>
@@ -153,13 +162,5 @@
       });
     }
   </script>
-  <script>var _hmt = _hmt || []; (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();</script>
-
-
 {% end %}
 
