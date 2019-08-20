@@ -40,11 +40,11 @@ class Application(tornado.web.Application):
         ]
 
         admins=[
-            (r"/admin",AdminHandler),
-            (r"/welcome",WelcomeHandler),
-            (r"/login",LoginHandler),
-            (r"/logout",LogoutHandler),
-            (r"/user",UserHandler)
+            (r"/admin/index",AdminHandler),
+            (r"/admin/welcome",WelcomeHandler),
+            (r"/admin/login",LoginHandler),
+            (r"/admin/logout",LogoutHandler),
+            (r"/admin/user",UserHandler)
         ]
 
         handlers=indexs+admins
@@ -55,7 +55,7 @@ class Application(tornado.web.Application):
             debug=True,
             cookie_secret='6de683f6e8f038f62863fe27a17573e5',
             xsrf_cookies=True,
-            login_url="/login",
+            login_url="/admin/login",
             ui_modules={
             'FriendlyLinks':FriendlyLinksModule,
             'Menus':MenuModule,

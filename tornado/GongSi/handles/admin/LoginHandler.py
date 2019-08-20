@@ -14,6 +14,6 @@ class LoginHandler(BaseHandler):
         password=self.get_argument("password")
         if username=='admin' and password=='admin':
             self.set_secure_cookie("username",username)
-            return self.redirect("/admin")
+            return self.redirect("/admin/index")
         else:
-            return self.redirect("/login")
+            return self.redirect("/admin/login")

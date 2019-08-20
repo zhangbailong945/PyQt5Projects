@@ -15,7 +15,7 @@
 
 {% block top %}
 
-<div class="logo"><a href="/admin">{{ sitename }}</a></div>
+<div class="logo"><a href="/admin/index">{{ sitename }}</a></div>
 <div class="left_open">
     <i title="展开左侧栏" class="iconfont">&#xe699;</i>
 </div>
@@ -34,7 +34,7 @@
     <a href="javascript:;">{{ username }}</a>
     <dl class="layui-nav-child"> <!-- 二级菜单 -->
       <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-      <dd><a href="/logout?logout=None">切换帐号</a></dd>
+      <dd><a href="/admin/logout?logout=None">切换帐号</a></dd>
       <dd><a href="./login.html">退出</a></dd>
     </dl>
   </li>
@@ -55,7 +55,7 @@
     </a>
     <ul class="sub-menu">
         <li>
-            <a _href="/user">
+            <a _href="/admin/user">
                 <i class="iconfont">&#xe6a7;</i>
                 <cite>用户列表</cite>
                 
