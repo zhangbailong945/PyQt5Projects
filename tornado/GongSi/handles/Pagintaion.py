@@ -25,7 +25,6 @@ class Pagination:
         self._page_current=self.is_number(page_current)
         self._page_sum=math.ceil(self._page_total/self._page_num) #分页总数=总记录数/每页显示条数 向上取整
         self._page_show=self.is_number(page_show)
-        self._page_url=page_url
         
 
         self._page_skip=(self._page_current-1)*self._page_num #skip(num) 等于当前页*每页显示数

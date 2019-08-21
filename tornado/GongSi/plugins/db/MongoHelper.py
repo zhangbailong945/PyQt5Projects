@@ -104,10 +104,8 @@ class MongoHelper(object):
         '''
         if self.__connect:
             if column is None:
-                print(page._page_skip)
                 return list(self.__connect[collection].find(condition).skip(page._page_skip).limit(page._page_num))
             else:
-                print(page._page_skip)
                 return list(self.__connect[collection].find(condition,column).skip(page._page_skip).limit(page._page_num))
         else:
             return None

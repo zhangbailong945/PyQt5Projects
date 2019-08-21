@@ -7,6 +7,7 @@ class UserHandler(BaseHandler):
     后台管理=》用户处理器
     '''
     def get(self):
+        url='user'
         name_en=self.get_argument("username","")
         page_num=self.get_argument("page_num",10)
         page_current=self.get_argument("page_current",1)
@@ -26,8 +27,9 @@ class UserHandler(BaseHandler):
         url_query.update(page_args)
         
         
-        page_args['page_url']=self.get_page_url(page_args)
+        page_args['page_url']=self.get_page_url(url,url_query)
         page_args['query']=db_query
         users,page=UserModel().get_user(page_args)
+        print(page.show_pages)
         return self.render('admin/user-list.html',users=users,page=page)
 

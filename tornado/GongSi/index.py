@@ -40,6 +40,7 @@ class Application(tornado.web.Application):
         ]
 
         admins=[
+            (r"/admin",AdminHandler),
             (r"/admin/index",AdminHandler),
             (r"/admin/welcome",WelcomeHandler),
             (r"/admin/login",LoginHandler),

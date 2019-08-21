@@ -67,10 +67,8 @@ class BaseHandler(tornado.web.RequestHandler):
         '''
         return self.request.query
 
-    def get_page_url(self,url_query):
+    def get_page_url(self,request_url,url_query):
         '''
         获取当前完整链接
         '''
-        if self.get_request_query()=='':
-            return CommonUtils.url_union(self.get_request_url(),url_query)
-        return self.get_request_url()
+        return CommonUtils.url_union(request_url,url_query)
