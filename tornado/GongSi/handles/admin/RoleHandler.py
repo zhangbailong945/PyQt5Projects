@@ -25,3 +25,9 @@ class RoleHandler(BaseHandler):
         url_query=dict()
         url_query.update(db_query)
         url_query.update(page_args)
+
+        page_args['page_url']=self.get_page_url(url,url_query)
+        page_args['query']=db_query
+        roles,page=RoleModel().get_role(page_args)
+        print(page.show_pages)
+        return self.render('admin/role-list.html',roles=roles,page=page)
