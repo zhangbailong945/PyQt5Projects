@@ -18,7 +18,7 @@
     <div class="message">登录中心</div>
     <div id="darkbannerwrap"></div>
     
-    <form method="post" class="layui-form" action="/login" >
+    <form method="post" class="layui-form" action="/admin/login" >
         {% raw xsrf_form_html() %}
         <input name="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
         <hr class="hr15">

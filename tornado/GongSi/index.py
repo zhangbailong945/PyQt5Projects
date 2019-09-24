@@ -34,11 +34,12 @@ class Application(tornado.web.Application):
         self.installer.createUserGroup()
         self.installer.createUser()
 
+        #网站路由
         indexs=[
             (r"/", IndexHandler),
             (r'/about',AboutHandler),
         ]
-
+        #后台路由
         admins=[
             (r"/admin",AdminHandler),
             (r"/admin/index",AdminHandler),

@@ -58,11 +58,11 @@ class Installer(object):
                 print('初始化友情链接失败！')
         return
     
-    def createUserGroup(self):
+    def createUserRole(self):
         '''
         初始化用户组
         '''
-        collection="group"
+        collection="role"
         data = [
             {"name_en": "superadmin", "name_cn": "超级管理员", "status": 1},
             {"name_en": "administrator", "name_cn": "管理员", "status": 1},
