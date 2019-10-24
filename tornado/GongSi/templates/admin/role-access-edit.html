@@ -23,84 +23,8 @@
     <xblock>
       <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
       <button class="layui-btn" onclick="x_admin_show('添加用户','./admin-add.html')"><i class="layui-icon"></i>添加</button>
-      <span class="x-right" style="line-height:40px">共有 <font color="green">{{ page._page_sum }}</font> 页，<font color="green">{{ page._page_total }}</font> 条数据。</span>
     </xblock>
-    <table class="layui-table">
-      <thead>
-        <tr>
-          <th>
-            <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-          </th>
-          <th>角色名</th>
-          <th>中文名</th>
-          <th>状态</th>
-          <th>操作</th>
-      </thead>
-      <tbody>
-        <!--
-        <tr>
-          <td>
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-          </td>
-          <td>admin</td>
-          <td>admin</td>
-          <td>超级管理员</td>
-          <td class="td-status">
-            <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-          <td class="td-manage">
-            <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-              <i class="layui-icon">&#xe601;</i>
-            </a>
-            <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
-              <i class="layui-icon">&#xe642;</i>
-            </a>
-            <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-              <i class="layui-icon">&#xe640;</i>
-            </a>
-          </td>
-        </tr>
-        -->
-        {% if roles %}
-        {%for role in roles %}
-        <tr>
-          <td>
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-          </td>
-          <td>{{ role['name_en'] }}</td>
-          <td>{{ role['name_cn'] }}</td>
-          <td class="td-status">
-            {% if role['status'] %}
-            <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-            {% else %}
-            <span class="layui-btn layui-btn-normal layui-btn-mini layui-btn-disabled">已停用</span></td>
-            {% end %}
-            
-          <td class="td-manage">
-            <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-              <i class="layui-icon">&#xe601;</i>
-            </a>
-            <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
-              <i class="layui-icon">&#xe642;</i>
-            </a>
-            <a title="授权"  onclick="show_access_dialog('授权',2,'/admin/role_accessadmin/role_access')" href="javascript:;">
-              <i class="layui-icon">&#xe672;</i>
-            </a>
-            <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-              <i class="layui-icon">&#xe640;</i>
-            </a>
-          </td>
-        </tr>
-        {% end %}
-        {% else %}
-        <tr><td colspan="6"><center><strong><font color="red">没有相关数据!</font></strong></center></td></tr>
-        {% end %}
-      </tbody>
-    </table>
-    <div class="page">
-      {% autoescape None %}
-      {{ page.show_pages }}
-    </div>
-
+    
   </div>
   <script>
     layui.use('laydate', function(){
