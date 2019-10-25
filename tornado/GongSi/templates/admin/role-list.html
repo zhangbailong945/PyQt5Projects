@@ -82,7 +82,7 @@
             <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
               <i class="layui-icon">&#xe642;</i>
             </a>
-            <a title="授权"  onclick="show_access_dialog('授权',2,'/admin/role_accessadmin/role_access')" href="javascript:;">
+            <a title="授权"  onclick="show_access_dialog('授权',2,'/admin/role_access')" href="javascript:;">
               <i class="layui-icon">&#xe672;</i>
             </a>
             <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
@@ -118,7 +118,7 @@
     });
 
     function show_access_dialog(title,type,url){
-        layer.open({
+        var index=layer.open({
           title:title
           ,type: type
           ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
@@ -126,11 +126,15 @@
           ,content: url
           ,btn: '关闭全部'
           ,btnAlign: 'c' //按钮居中
-          ,shade: 0 //不显示遮罩
+          ,shade: [0.8,'#393D49']//不显示遮罩
+          ,width:600
+          ,height:400
+          ,maxmin:true
           ,yes: function(){
             layer.closeAll();
           }
         });
+        layer.full(index);
     }
 
      /*用户-停用*/
