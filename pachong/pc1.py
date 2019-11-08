@@ -11,5 +11,5 @@ headers={
 }
 
 
-response=requests.get('https://www.baidu.com/s',params={'wd':'美女'},headers=headers)
+response=requests.get('https://www.baidu.com/s',params={'wd':'图书'},headers=headers)
 print(response.text)

@@ -39,3 +39,30 @@ def f2(a,L=None):
 print(f2(1))
 print(f2(2))
 print(f2(3))
+
+
+## /之前仅限位置， /之后为位置或者其他参数 *之后为仅限关键字参数
+def def1(a,b):
+    return a*b
+
+print(def1(1,3))
+
+## * 之后的形参 仅限关键字
+def def2(*,b):
+    print(b)
+
+print(def2(b=3))
+
+
+args1=[3,6]
+print(list(range(*args1)))
+
+def def3(a:int,b:int)->int:
+    return a+b
+
+print(def3(3,5))
+
+
+def4=lambda x:x+2
+
+print(def4(2))
