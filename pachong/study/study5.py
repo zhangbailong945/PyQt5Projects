@@ -22,6 +22,7 @@ def rev1(data):
     for index in range(len(data)-1,-1,-1):
         yield data[index]
 
+
 if __name__ == "__main__":
     rev=Reverse('zhang')
     print(iter(rev))
@@ -30,3 +31,8 @@ if __name__ == "__main__":
 
     for x in rev1('long'):
         print(x)
+
+
+
+
+

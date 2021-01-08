@@ -23,3 +23,7 @@ if __name__=='__main__':
         raise
         '''
     print('hello')
+    
+
+for i in range(1,9):
+    print(i)
