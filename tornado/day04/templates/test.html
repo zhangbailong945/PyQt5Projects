@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../static/layui/css/layui.css"/>
+<script src="../static/layui/layui.js"></script>
+<style>
+    html,body{
+        margin: 0 auto;
+        height: 100%;
+    }
+    .main{
+        height: 100%;
+        margin: 0 auto;
+        padding: 50px 0 0 0;
+
+
+    }
+    .face{
+
+        width:500px;
+        height:250px;
+        margin:0 auto;
+    }
+    .face_action{
+
+        text-align: center;
+        width: 500px;
+        height: 50px;
+        margin:0 auto;
+        line-height: 50px;
+    }
+    .face_action button{
+        vertical-align: middle;
+    }
+    .myvideo{
+        border: solid 1px black;
+        width:200px;
+        height:200px;
+        float: left;
+        margin: 20px 20px 0px 30px;
+
+    }
+    .myphoto{
+        border: solid 1px black;
+        margin: 20px 20px 0px 20px;
+        width:200px;
+        height:200px;
+        float: left;
+
+    }
+    .login{
+        width: 500px;
+        margin:20px auto;
+
+    }
+</style>
+</head>
+<body>
+
+<div class="layui-container main">
+        <div class="face">
+            <div class="myvideo">
+                <video autoplay id="video"></video>
+            </div>
+            <div class="myphoto">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div class="face_action">
+            <button class="layui-btn" id="openMedia" type="button">打开摄像头</button>
+            <button class="layui-btn" id="closeMedia" type="buton">关闭摄像头</button>
+            <button class="layui-btn" id="drawMedia" type="button">确定截取</button>
+        </div>
+        <div class="login">
+            <form class="layui-form" action="POST">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">账号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="username" name="username" required placeholder="请输入账号" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">真实姓名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="realname" name="realname" required placeholder="请输入账号" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="password" name="password" required placeholder="请输入密码" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                    <input type="hidden" id="face_img" name="face_img"/>
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>
+
+<script>
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+        ,form = layui.form;
+    });
+</script>
+</body>
+</html>

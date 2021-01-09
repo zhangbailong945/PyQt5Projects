@@ -19,3 +19,4 @@ class UserModel(MongoHelper):
         page_url=args['page_url']
         page=Pagination(page_total=page_total,page_num=page_num,page_current=page_current,page_url=page_url,page_show=2)
         return self.find(page,self.col,query,colum),page
+    

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ static_url('css/style.css') }}">
+{% end %}
+
+{% block content %}
+
+    <p>O(∩_∩)O</p>
+    {{ items }}
+
+    {% for a in items %}
+        {% if a == 'python' %}
+            <p style="color:red;">{{ a }}</p>
+        {% elif a == 'php' %}
+            <p style="color:green;">{{ a }}</p>
+        {% else %}
+            <p>{{ a }}</p>
+        {% end %}
+    {% end %}
+
+    {{ items[0] }}
+
+    {% while len(items) %}
+        <p>{{ items.pop() }}</p>
+    {% end %}
+
+    {% try %}
+        {{ items2[10] }}
+    {% except %}
+        <p>下标溢出</p>
+    {% finally %}
+        <p>必须执行的操作</p>
+    {% end %}
+
+    {% set n=1 %}
+    <p>{{ n }}</p>
+{% end %}

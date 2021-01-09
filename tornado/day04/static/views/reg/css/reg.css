@@ -1,0 +1,50 @@
+html,body{
+    margin: 0 auto;
+    height: 100%;
+}
+.main{
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+
+
+}
+.face{
+
+    width:500px;
+    height:250px;
+    margin:0 auto;
+}
+.face_action{
+
+    text-align: center;
+    width: 500px;
+    height: 50px;
+    margin:0 auto;
+    line-height: 50px;
+}
+.face_action button{
+    vertical-align: middle;
+}
+.myvideo{
+    border: solid 1px black;
+    width:200px;
+    height:200px;
+    float: left;
+    margin: 20px 20px 0px 30px;
+
+}
+.myphoto{
+    border: solid 1px black;
+    margin: 20px 20px 0px 20px;
+    width:200px;
+    height:200px;
+    float: left;
+
+}
+.login{
+
+    width: 500px;
+    margin:20px auto;
+
+}

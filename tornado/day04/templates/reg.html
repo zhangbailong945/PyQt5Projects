@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+人脸注册
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ static_url('views/reg/css/reg.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ static_url('layui/css/layui.css') }}"/>
+{% end %}
+
+{% block js %}
+<script src="{{ static_url('jquery/jquery-3.5.1.min.js') }}"></script>
+{% end %}
+
+{% block content %}
+<div class="layui-container main">
+    <div class="face">
+        <div class="myvideo">
+            <video autoplay id="video"></video>
+        </div>
+        <div class="myphoto">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <div class="face_action">
+        <button class="layui-btn" id="openMedia" type="button">打开摄像头</button>
+        <button class="layui-btn" id="closeMedia" type="buton">关闭摄像头</button>
+        <button class="layui-btn" id="drawMedia" type="button">确定截取</button>
+    </div>
+    <div class="login">
+        <form class="layui-form" action="POST">
+            <div class="layui-form-item">
+                <div class="layui-form-mid layui-word-aux">
+                    {% if error %}
+                        {{ error }}
+                    {% end %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="username" name="username" required placeholder="请输入账号" autocomplete="off" class="layui-input" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">真实姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="realname" name="realname" required placeholder="请输入账号" autocomplete="off" class="layui-input" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="password" name="password" required placeholder="请输入密码" autocomplete="off" class="layui-input" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                <input type="hidden" id="face_img" name="face_img"/>
+                <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% end %}
+
+
+{% block script %}
+
+
+<script src="{{ static_url('layui/layui.all.js') }}"></script>
+<script src="{{ static_url('layui/lay/modules/form.js') }}"></script>
+<script src="{{ static_url('camera/camera.js') }}"></script>
+
+<script>
+    
+    $(function(){
+        $('#openMedia').click(openMedia);
+        $('#closeMedia').click(closeMedia);
+        $('#drawMedia').click(drawMedia);
+    });
+
+    layui.use(['layer', 'form'], function(){
+      var layer = layui.layer
+      ,form = layui.form;
+      
+    });
+    </script> 
+{% end %}
