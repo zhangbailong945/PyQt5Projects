@@ -2,7 +2,9 @@ import tornado.web
 import tornado.websocket
 import time
 from hashlib import md5
-from app.models import init_db
+from app.models import init_db,User
+from utils.conn import session
+from utils.baidu_face import face_register
 
 class InitDbHandler(tornado.web.RequestHandler):
 
@@ -80,8 +82,22 @@ class RegHandler(tornado.web.RequestHandler):
         password=self.get_argument('password')
         if face_img and username and realname and password:
             #注册模型
+            user=User()
+            user.username=username
+            user.realname=realname
+            user.password=password
+            session.add(user)
+            session.commit()
             #百度接口
-            pass
+            img=face_img.split(',')[-1]
+            print(img)
+            res=face_register(img,user.id)
+            if res:
+                self.redirect('/login/')
+            else:
+                session.delete(user)
+                session.commit()
+                self.redirect('/reg/')
         else:
             error="请填写完整的注册信息"
             self.render('reg.html',error=error)

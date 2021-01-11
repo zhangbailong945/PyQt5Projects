@@ -62,4 +62,6 @@ function drawMedia() {
     canvas1.setAttribute("width", video.videoWidth);
     canvas1.setAttribute("height", video.videoHeight);
     context1.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    $('#face_img').val(canvas1.toDataURL('image/png'));
+    closeMedia()
 }

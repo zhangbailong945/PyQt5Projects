@@ -29,7 +29,7 @@
         <button class="layui-btn" id="drawMedia" type="button">确定截取</button>
     </div>
     <div class="login">
-        <form class="layui-form" action="POST">
+        <form class="layui-form" method="POST" action="/reg/">
             <div class="layui-form-item">
                 <div class="layui-form-mid layui-word-aux">
                     {% if error %}
@@ -40,6 +40,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">账号</label>
                 <div class="layui-input-inline">
+                    <input type="hidden" id="face_img" name="face_img" />
                     <input type="text" id="username" name="username" required placeholder="请输入账号" autocomplete="off" class="layui-input" />
                 </div>
             </div>
@@ -57,7 +58,6 @@
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                <input type="hidden" id="face_img" name="face_img"/>
                 <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
