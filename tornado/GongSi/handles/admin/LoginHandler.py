@@ -10,7 +10,7 @@ class LoginHandler(BaseHandler):
         return self.render('admin/login.html')
     
     def post(self):
-        username=self.get_argument("username")
+        username=self.get_argument('username')
         password=self.get_argument("password")
         if username=='admin' and password=='admin':
             self.set_secure_cookie("username",username)
