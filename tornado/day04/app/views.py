@@ -5,6 +5,7 @@ from hashlib import md5
 from app.models import init_db,User
 from utils.conn import session
 from utils.baidu_face import face_register
+import base64
 
 class InitDbHandler(tornado.web.RequestHandler):
 
@@ -90,8 +91,8 @@ class RegHandler(tornado.web.RequestHandler):
             session.commit()
             #百度接口
             img=face_img.split(',')[-1]
-            print(img)
-            res=face_register(img,user.id)
+            img=base64.urlsafe_b64encode(bytes(img,encoding='utf-8'))
+            res=face_register(str(img),user.id)
             if res:
                 self.redirect('/login/')
             else:

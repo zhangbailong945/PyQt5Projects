@@ -5,6 +5,7 @@ from aip import AipFace
 APP_ID = '23496008'
 API_KEY = '1APyzZ0nRBGuNt26M8psqnD4'
 SECRET_KEY = 'ns0Q5LkpDakGCRXIa2vwKttxuvduYtHU'
+import base64
 
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
 

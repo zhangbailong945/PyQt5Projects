@@ -3,6 +3,7 @@ import tornado.ioloop
 from tornado.options import options,define,parse_command_line
 from app.views import InitDbHandler,LoginHandler,ChatHandler,RegHandler
 
+
 import os
 
 define('port',default=8888,type=int)
