@@ -10,9 +10,16 @@ import base64
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
 
 
-def face_register(image,user_id,image_type='BASE64',group_id='user'):
-    res=client.addUser(image,user_id,image_type,group_id)
+def face_register(image,imageType,groupId,userId):
+    res=client.addUser(image,imageType,groupId,userId)
     print(res)
     if res['error_code']:
         return False
     return True
+
+def face_search(image,imageType,groupIdList):
+    res=client.search(image,imageType,groupIdList)
+    if res['error_code']:
+        return False
+    return True
+

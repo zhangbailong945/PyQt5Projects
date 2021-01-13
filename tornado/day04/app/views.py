@@ -4,7 +4,7 @@ import time
 from hashlib import md5
 from app.models import init_db,User
 from utils.conn import session
-from utils.baidu_face import face_register
+from utils.baidu_face import face_register,face_search
 import base64
 
 class InitDbHandler(tornado.web.RequestHandler):
@@ -22,9 +22,14 @@ class LoginHandler(tornado.web.RequestHandler):
 
     def post(self):
         error=''
+        face_img=self.get_argument('face_img')
         username=self.get_argument('username')
         password=self.get_argument('password')
-        if username in ['loach','long'] and password=='123456':
+        image=face_img.split(',')[-1]
+        imageType='BASE64'
+        groupIdList='user'
+        res=face_search(image,imageType,groupIdList
+        if res and username in ['loach','long'] and password=='123456':
             self.set_cookie('username',username)
             self.render('chat.html')
         else:
@@ -90,9 +95,17 @@ class RegHandler(tornado.web.RequestHandler):
             session.add(user)
             session.commit()
             #百度接口
-            img=face_img.split(',')[-1]
-            img=base64.urlsafe_b64encode(bytes(img,encoding='utf-8'))
-            res=face_register(str(img),user.id)
+            image=face_img.split(',')[-1]
+            imageType='BASE64'
+            groupId='user'
+            userId=user.id
+            # with open('face.png','wb') as f:
+            #     f.write(img)
+            
+            # with open('face.png','rb') as f:
+            #     img=f.read()
+            # data_img=base64.b64encode(img)
+            res=face_register(image,imageType,groupId,userId)
             if res:
                 self.redirect('/login/')
             else:
