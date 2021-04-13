@@ -1,0 +1,21 @@
+{% extends 'user/base_user.html' %}
+
+{{ title }}
+
+{% block header %}
+    {% include "banner.html" %}
+{% endblock %}
+
+
+{% block content %}
+    <h1>新用户注册中心</h1>
+
+    {% macro hello() %}
+    这是一个macro
+    {% endmacro %}
+
+    {{ hello() }}
+    {{ hello() }}
+    {{ hello() }}
+{% endblock %}
+

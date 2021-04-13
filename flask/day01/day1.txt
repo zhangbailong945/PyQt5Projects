@@ -1,0 +1,22 @@
+一、安装
+pip install flask
+
+二、debugger
+flask中的调试器拥有保护功能
+PIN
+如果需要在页面进行调试，需要输入PIN码进行页面确认
+
+二、flask-script
+可以添加flask脚步的扩展库
+添加命令行参数
+1.安装
+pip install flask-script
+2.初始化
+使用app构建Manager对象
+3.调用
+runserver 
+-d   debugger
+-r   重载
+-p   端口号
+-h   主机
+--threaded 多线程

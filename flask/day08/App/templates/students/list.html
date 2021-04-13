@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students</title>
+    <!-- <link rel="stylesheet" href="/static/css/students.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/students.css') }}">
+</head>
+<body>
+    <h1>学生表</h1>
+    <table>
+        <th><td>编号</td><td>姓名</td></th>
+        {% for stu in students %}
+        <tr><td>{{ stu.id }}</td><td>{{ stu.name }}</td></tr>
+        {% endfor %}  
+    </table>
+
+</body>
+</html>
