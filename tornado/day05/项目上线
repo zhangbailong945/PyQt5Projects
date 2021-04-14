@@ -1,0 +1,66 @@
+一、mariadb数据库安装
+
+1.安装mariadb
+yum -y install mariadb mariadb-server
+
+2.启动mariadb
+systemctl start mariadb
+
+3.开机启动mariadb
+systemctl enable mariadb
+
+4.设置密码
+mysql_secure_installation
+4-1.确认root密码 回车
+4-2.设置root密码 回车
+4-3.设置匿名用户 Y 回车
+4-4.禁用远程登录 N 回车
+4-5.是否删除测试数据库 N 回车
+4-6.是否重新加载权限
+
+
+5.登录mariadb
+mysql -u root -p
+输入密码登录
+
+
+二、开启远程连接
+1.创建用户
+use mysql;
+
+2.针对IP创建用户
+create user 'loach'@'205.215.5.146' identified by 'long.123';
+
+3.全部
+create user 'loach'@'%' identified by 'long.123';
+
+4.授权
+#给用户最大的权限
+grant all privileages on *.* to 'root'@'%' identified by 'long.123';
+
+#给用户部分权限(test 数据库)
+grant all privileages on test.* to 'loach'@'%' identified by 'long.123' with grant option;
+
+#刷新权限
+flush privileages;
+
+
+三、虚拟坏境
+
+pip install python-virtualenv
+
+pip install virtualenvwrapper
+
+vi ~.bashrc or vi .bash_profile
+
+export WORKON_HOME=/envs
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--no-site-packages"
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/python/bin/python3
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/python/bin/virtualenvwrapper.sh
+
+source ./bashrc
+
+
+
+
+
